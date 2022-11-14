@@ -129,4 +129,8 @@ print("\n")
 join_tuple = (tuple_str + tuple_int) * 2
 print(join_tuple)
 
+new_tuple = tuple.__add__(tuple_str, tuple_int)
+# new_tuple = tuple.__class_getitem__(tuple_str)
+# new_tuple = tuple.__doc__
+# print(new_tuple)
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
