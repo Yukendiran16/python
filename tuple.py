@@ -19,79 +19,38 @@ tuple_mix = (1, "hii", True, 2, "myself", False)  # tuple using numbers, string,
 print(len(tuple_bool))  # length of the tuple_bool
 print(type(tuple_bool))  # type of the tuple_bool
 
-try:
-    print(tuple_int)
-    print(tuple_int[1])
-    print(tuple_int[2:6])
-    print(tuple_int[1:])
-    print(tuple_int[:6])
-    print(tuple_int[-1])
-    print(tuple_int[-6:-2])
-    print(tuple_int[:-1])
-    print(tuple_int[-6:])
-except IndexError:
-    print("you entered wrong index number")
-print(tuple_str)
 
-if "hello" in tuple_str:
-    print("is present")
-    print("\n")
+def indexing():
+    print("Tuple of numbers")
+    print(tuple_int)
+    print("\n Positive indexing")
+    print("Value at index 1")
+    print(tuple_int[1])
+    print("values from index 2 to 6")
+    print(tuple_int[2:6])
+    print("values from index 1 to end of the tuple")
+    print(tuple_int[1:])
+    print("values from index 6 to stating of the tuple in reverse")
+    print(tuple_int[:6])
+    print("\n Negative indexing")
+    print("Value at index 1")
+    print(tuple_int[-1])
+    print("values from index -6 to -2")
+    print(tuple_int[-6:-2])
+    print("values from index -1 to stating of the tuple in reverse")
+    print(tuple_int[:-1])
+    print("values from index -6 to end of the tuple")
+    print(tuple_int[-6:])
+
 
 # TypeError: 'tuple' object does not support item assignment
 # if you modify the tuple returns above error
 # using try except you handle it.
-# try:
-#     tuple_str[-1] = "python"
-#     print(tuple_str)
-# except TypeError:
-#     print("\n exception occurs you try to modify tuple, but it is not possible\n")
-try:
-    tuple_str_dup = list(tuple_str)
-    tuple_str_dup[-1] = "python"
-    # tuple_str_dup[-10] = "python"
-    tuple_str = tuple(tuple_str_dup)
-    print(tuple_str)
-except IndexError:
-    print("you entered wrong index number")
-    print("\n")
-
-# NameError: name 'tuple_str_' is not defined.
-tuple_str_dup = list(tuple_str)
-tuple_str_dup.append("welcome")
-tuple_str = tuple(tuple_str_dup)
-print(tuple_str)
-print("\n")
-# try:
-#     print(tuple_str_)
-#     del (tuple_str_)
-# except NameError:
-#     print("\n you entered wrong name it doesn't initialize \n")
+# tuple_str[-1] = "python"
+# print(tuple_str)
 
 tuple_srt_add = ("to", "my", "world")
 tuple_str += tuple_srt_add
-print(tuple_str)
-print("\n")
-
-# returns ValueError: list.remove(x): x not in list
-# if you push to remove value is not present in tuple
-# using try with except you handle the ValueError
-# tuple_str_dup = list(tuple_str)
-# tuple_str_dup.remove("abc")
-# tuple_str = tuple(tuple_str_dup)
-# print(tuple_str)
-# raise ValueError("\n exception occurs you try to remove value is not present in the tuple\n")
-
-tuple_str_dup = list(tuple_str)
-try:
-    tuple_str_dup.remove("abc")
-    tuple_str = tuple(tuple_str_dup)
-    print(tuple_str)
-except ValueError:
-    print("\nexception occurs you try to remove value is not present in the tuple\n")
-
-tuple_str_dup = list(tuple_str)
-tuple_str_dup.remove("hello")
-tuple_str = tuple(tuple_str_dup)
 print(tuple_str)
 print("\n")
 
@@ -112,11 +71,6 @@ for mix in range(len(tuple_mix)):
     print(tuple_mix[mix])
 print("\n")
 
-for mix in range(0, len(tuple_mix)):
-    print(mix)
-    print(tuple_mix[mix])
-print("\n")
-
 # iterating through tuple using while loop
 mix_itr = 0
 while mix_itr < len(tuple_mix):
@@ -131,6 +85,6 @@ print(join_tuple)
 
 new_tuple = tuple.__add__(tuple_str, tuple_int)
 # new_tuple = tuple.__class_getitem__(tuple_str)
-# new_tuple = tuple.__doc__
-# print(new_tuple)
+print(new_tuple)
+
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

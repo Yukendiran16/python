@@ -5,41 +5,45 @@ I wish to create simple calculator using pep8
 and I create some other examples
 """
 
-
 from calculate import add_values
 from calculate import sub_values
 from calculate import mul_values
 from calculate import div_values
+from constants import WRONG_INPUT
 # from calculate import *
 
 
 # method for choose operation like,
 # addition, subtraction, multiplication, division
 def calculator(choice):
-    match choice:
-        case 1:
-            print("Enter two values to addition")
-            value1 = int(input("Enter first value : "))
-            value2 = int(input("Enter second value : "))
-            print("your result is :" + str(add_values(value1, value2)))
+    """ this function handle the mathematical operations"""
+    if 1 == choice:
+        result = add_values()
+        print(result[0], result[1])
+    elif 2 == choice:
+        print(sub_values())
+    elif 3 == choice:
+        print(mul_values())
+    elif 4 == choice:
+        print(div_values())
+    else:
+        print(WRONG_INPUT, choice)
 
-        case 2:
-            print("Enter values to subtraction")
-            value1 = int(input("Enter first value : "))
-            value2 = int(input("Enter second value : "))
-            print("your result is :" + str(sub_values(value1, value2)))
 
-        case 3:
-            print("Enter values to multiplication")
-            value1 = int(input("Enter first value : "))
-            value2 = int(input("Enter second value : "))
-            print("your result is :" + str(mul_values(value1, value2)))
+def add_matrix():
+    matrix_X = [1, 2, 3,
+                4, 5, 6,
+                7, 8, 9]
+    matrix_Y = [
+        9, 8, 7,
+        6, 5, 4,
+        3, 2, 1]
 
-        case 4:
-            print("Enter values to division")
-            value1 = int(input("Enter first value : "))
-            value2 = int(input("Enter second value : "))
-            print("your result is :" + str(div_values(value1, value2)))
+    result_matrix = []
+    for i in range(0, len(matrix_X)):
+        result_matrix.append(matrix_X[i] + matrix_Y[i])
+
+    return result_matrix
 
 
 # This is the controller of the calculator
@@ -47,6 +51,7 @@ print("\n\n Hi welcome I am calculator for your calculations")
 print(" Can I help ?")
 print(" 1. addition \n 2. subtraction \n 3. multiplication \n 4. division ")
 print("Press one option for what do you now")
+print(add_matrix())
 option = int(input())  # input for choose what kind of operation will be performed
 calculator(option)
 
