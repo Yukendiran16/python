@@ -23,7 +23,7 @@ print(type(tuple_bool))  # type of the tuple_bool
 def indexing():
     print("Tuple of numbers")
     print(tuple_int)
-    print("\n Positive indexing")
+    print("\nPositive indexing")
     print("Value at index 1")
     print(tuple_int[1])
     print("values from index 2 to 6")
@@ -32,8 +32,8 @@ def indexing():
     print(tuple_int[1:])
     print("values from index 6 to stating of the tuple in reverse")
     print(tuple_int[:6])
-    print("\n Negative indexing")
-    print("Value at index 1")
+    print("\nNegative indexing")
+    print("Value at index -1")
     print(tuple_int[-1])
     print("values from index -6 to -2")
     print(tuple_int[-6:-2])
@@ -48,18 +48,31 @@ def indexing():
 # using try except you handle it.
 # tuple_str[-1] = "python"
 # print(tuple_str)
+def add_tuple(tuple_str):
+    tuple_srt_add = ("to", "my", "world")
+    tuple_str += tuple_srt_add
+    print(tuple_str)
+    print("\n")
+    # tuple joins
+    join_tuple = (tuple_str + tuple_int) * 2
+    print(join_tuple)
+    new_tuple = tuple.__add__(tuple_str, tuple_int)
+    # new_tuple = tuple.__class_getitem__(tuple_str)
+    print(new_tuple)
 
-tuple_srt_add = ("to", "my", "world")
-tuple_str += tuple_srt_add
-print(tuple_str)
-print("\n")
 
 # tuple unpacking
 # (a, b, c, *d, *e) = tuple_str    # SyntaxError: multiple starred expressions in assignment
-(a, b, c, d, *e) = tuple_str
-print(a, b, c, d)
-print(e)  # returns list all values in tuple expect a, b, c, d
-print("\n")
+def tuple_unpacking():
+    (a, b, c, d, *e) = tuple_str
+    print(a, b, c, d)
+    print(e)  # returns list all values in tuple expect a, b, c, d
+    print("\n")
+
+
+indexing()
+add_tuple(tuple_str)
+tuple_unpacking()
 
 # iterating through tuple using for loop
 for mix in tuple_mix:
@@ -79,12 +92,5 @@ while mix_itr < len(tuple_mix):
     mix_itr += 1
 print("\n")
 
-# tuple joins
-join_tuple = (tuple_str + tuple_int) * 2
-print(join_tuple)
-
-new_tuple = tuple.__add__(tuple_str, tuple_int)
-# new_tuple = tuple.__class_getitem__(tuple_str)
-print(new_tuple)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

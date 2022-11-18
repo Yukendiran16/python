@@ -31,8 +31,17 @@ try:
     print(list_int[-6:])
 except IndexError:
     print("you entered wrong index number")
-print(list_str)
 
 if "hello" in list_str:
     print("is present")
     print("\n")
+
+set_int = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+for i in set_int:
+    print(set_int)
+    print(i)
+set_int.add("sss")
+set_int.add("dss")
+print(set_int)
+
+
