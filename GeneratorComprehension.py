@@ -6,7 +6,8 @@ print(sys.getsizeof(set(var for var in input_list if var % 2 == 0)))
 
 tuple_x = (10, 6, 45, 89, 90, 1, 225, 76, 44, 356, 356, 24, 676, 68, 2435, 676, 24)
 x = (i for i in tuple_x if i % 5 == 0)
-print(list(x))
+print(sys.getsizeof(tuple_x))
+print(sys.getsizeof(list(x)))
 print(sys.getsizeof(x))
 
 y = tuple(i for i in tuple_x if i % 5 == 0)
@@ -21,31 +22,34 @@ print(sys.getsizeof(matrix_x))
 matrix_y = [[3, 1, 2],
             [5, 4, 6],
             (9, 7, 8)]
-print([[sum(x * y for x, y in zip(X, Y)) for Y in zip(*matrix_y)] for X in matrix_x])
+for i in ((sum(x * y for x, y in zip(X, Y)) for Y in zip(*matrix_y)) for X in matrix_x):
+    print(list(i))
 
 
 def add(a, b):
     yield a + b
 
 
-def generator_thr_iter():
+def generator_thr_iter(*args):
     yield 'xyz', 444, 440.4
     yield list(add(3, 4))
     yield list(add(10, 10))
+    yield x
 
 
-for i in generator_thr_iter():
-    print(i)
+generate = generator_thr_iter()
+print(generate.__next__(), "\n", generate.__next__(), "\n", generate.__next__())
 
 
-def num_generator(n):
-    num = 1
-    while True:
-        yield num
-        if num == n:
-            return
-        else:
-            num += 1
-
-    for i in num_generator(20):
-        print(i * i)
+# def num_generator(n):
+#     num = 1
+#     while True:
+#         yield num
+#         if num == n:
+#             return
+#         else:
+#             num += 1
+#
+#
+# for i in num_generator(20):
+#     print(i * i)

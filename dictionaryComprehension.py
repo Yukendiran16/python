@@ -23,8 +23,15 @@ players = ["K L Rahul", "Rohit", "Virat", "Surya", "Rishab", "Harthik", "Ashwin"
 runs_wi = [28, 13, 50, 32, 53, 0, 0, 0, 0, 0, 0]
 runs_sa = [28, 13, 50, 32, 53, 0, 0, 0, 0, 0, 0]
 runs_sl = [28, 13, 50, 32, 53, 0, 0, 0, 0, 0, 0]
-print({player: runs for player, runs in
-       zip((player for player in players), (y + z + w for y, z, w in
-                                            set(zip(runs_sa, runs_wi, runs_sl))))})
+print({player: runs for player, runs in zip((player for player in players),
+                                            (y + z + w for y, z, w in zip(runs_sa, runs_wi, runs_sl)))})
 print([y + z + w for y, z, w in zip(runs_sa, runs_wi, runs_sl)])
 print({1: "hii", True: "hello"})
+
+for i in zip(runs_sa, runs_wi, runs_sl):
+    print(i)
+
+multiples = {key1: {key2: key1 ** key2 for key2 in range(1, 10)} for key1 in range(1, 10)}
+for i in multiples:
+    print("key = " + str(i) + " " + str(multiples.get(i)))
+

@@ -22,4 +22,4 @@ print([[sum(x * y for x, y in zip(X, Y)) for Y in zip(*matrix_y)] for X in matri
 matrix = [[j for j in range(10)] for i in range(3)]
 print(matrix)
 
-print([x if x != 4 else "Some value" for x in list_x])
+print([x if x % 3 == 0 else "Some value" for x in list_x if x % 2 == 0])
