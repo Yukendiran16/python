@@ -18,10 +18,14 @@ print(myDict)
 new_dict = {x: x ** 3 for x in range(10) if x ** 3 % 4 == 0}
 print(new_dict)
 
+# names of cricket players list
 players = ["K L Rahul", "Rohit", "Virat", "Surya", "Rishab", "Harthik", "Ashwin", "Jadeja", "Bhuvi", "Shami",
            "Arshdeep"]
+# runs with individual players vs west indies
 runs_wi = [28, 13, 50, 32, 53, 0, 0, 0, 0, 0, 0]
+# runs with individual players vs south africa
 runs_sa = [28, 13, 50, 32, 53, 0, 0, 0, 0, 0, 0]
+# runs with individual players vs sri lanka
 runs_sl = [28, 13, 50, 32, 53, 0, 0, 0, 0, 0, 0]
 print({player: runs for player, runs in zip((player for player in players),
                                             (y + z + w for y, z, w in zip(runs_sa, runs_wi, runs_sl)))})

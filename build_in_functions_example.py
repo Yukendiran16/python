@@ -27,6 +27,8 @@ print("\nMap function used to map datas in collection")
 runs_wi = [28, 13, 50, 32, 53, 0, 0, 0, 0, 0, 0]
 runs_sa = [28, 13, 50, 32, 53, 0, 0, 0, 0, 0, 0]
 runs_sl = [28, 13, 50, 32, 53, 0, 0, 0, 0, 0, 0]
-result = map(lambda player, x, y, z, w: {player: x + y + z + w}, players, runs_aus, runs_wi, runs_sa, runs_sl)
-print(list(result))
+print(list(map(lambda player, x: {player: sum(x)}, players, zip(runs_aus, runs_wi, runs_sa, runs_sl))))
+result = list(filter(lambda score: [y for x, y in score.items()] >= [50],
+                     map(lambda player, x: {player: sum(x)}, players, zip(runs_aus, runs_wi, runs_sa, runs_sl))))
+print(list(filter(lambda score: [y for x, y in score.items()] >= [50], result)))
 

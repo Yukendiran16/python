@@ -1,5 +1,3 @@
-# import datetime
-#
 # brand_name = ["Apple", "Sony", "Samsung", "Vivo", "Redmi", "Realme"]
 # price = ["90K", "40K", "30K", "25K", "20K", "18K"]
 #
@@ -67,20 +65,16 @@
 
 
 def generate():
-    for i in [1,2,3,4,5]:
-        print(i)
+    for i in range(100000):
         result = "I2I" + str(i)
-        print('first: ', result)
         yield result
-        print("end")
 
 
 ids = generate()
 while True:
-    print(ids)
     generate_id = input("Generate Id yes/no")
     if generate_id == "yes":
-        print('final: ', next(ids))
+        print(type(next(ids)))
     else:
         break
 
