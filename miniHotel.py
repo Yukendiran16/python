@@ -1,6 +1,7 @@
 dishes = {}
 customer = []
 food_list = {}
+isContinue = True
 
 
 def generate():
@@ -11,13 +12,17 @@ def generate():
 
 def add_dish():
     global food_list
-    choice = input("If want to add yes/no")
-    while choice == "yes":
-        cuisine = input("Enter cuisine name")
-        food_name = input("Enter fod name")
-        amount = int(input("Enter amount"))
-        dishes.__setitem__(cuisine, {food_name: amount})
-    food_list = ({food: amount} for food, amount in (dish_list for dish_list in dishes.values()))
+    while isContinue:
+        choice = input("If want to add yes/no")
+        if choice == "yes":
+            cuisine = input("Enter cuisine name")
+            food_name = input("Enter fod name")
+            amount = int(input("Enter amount"))
+            dishes.__setitem__(cuisine, {food_name: amount})
+            food_list = (dish_list for dish_list in dishes.values())
+            print(list(food_list))
+        else:
+            break
 
 
 def view_dish():
@@ -25,8 +30,9 @@ def view_dish():
     print("1. Indian food")
     print("2. English food")
     print("3. Chinees food")
-    view = int(input("Enter choice"))
-    while view == 1 or 2 or 3:
+    print("4. Exit")
+    while isContinue:
+        view = int(input("Enter choice"))
         if view == 1:
             print({cuisine: dish for cuisine, dish in dishes.items()
                    if cuisine == "Indian"})
@@ -36,8 +42,10 @@ def view_dish():
         elif view == 3:
             print({cuisine: dish for cuisine, dish in dishes.items()
                    if cuisine == "Chinees"})
-        else:
+        elif view == 4:
             break
+        else:
+            print("Wrong input")
 
 
 def bill_amount():
@@ -53,25 +61,28 @@ def bill_amount():
         else:
             break
         for food_name in bill.keys():
-            total = sum(
-                amount for food_name, amount in filter(lambda food: food_name == food_list.get(food), food_list))
+            total = sum(amount for food_name, amount in
+                        filter(lambda food: food_name == food_list.get(food), food_list))
             print({ids.__next__(): total})
 
 
 ids = generate()
-isContinue = input("yes/no")
-while isContinue == "yes":
+while isContinue:
     print("***********Welcome*********")
     print("1. Add dish")
     print("2. view dish")
     print("3. dish bill")
+    print("4. Exit")
     print("*********Thank you*********")
-    option = int(input())
+    option = int(input("Enter one choice"))
     if option == 1:
         add_dish()
     elif option == 2:
         view_dish()
     elif option == 3:
         bill_amount()
+    elif option == 4:
+        print("thank you")
+        break
     else:
-        "thank you"
+        print("Wrong input")
