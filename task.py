@@ -1,3 +1,5 @@
+import re
+import sys
 from functools import reduce
 
 # employee_list = []
@@ -89,13 +91,46 @@ from functools import reduce
 #         c += i[::-1] + " "
 # print(c)
 
-brackets = ['[', ']', '{', '}', '{', '{', '}', '{', '{', '}', '(', '{', '{', '}', '(', ')']
+
+brackets = [']', '[', ']', '{', '}', '{', '{', '}', '{', '{', '}', '(', '}', '{', ']', '{', '}', '(', ')', ')']
 count = 0
-for value, open_bracket in enumerate(brackets):
-    if open_bracket == chr(40) or open_bracket == chr(123) or open_bracket == chr(91):
-        brackets.pop(value)
-        for index, close_bracket in enumerate(brackets, value):
-            if close_bracket == chr(41) or close_bracket == chr(125) or close_bracket == chr(93):
-                brackets.pop(index)
-                count += 1
+
+
+def check_count(*args):
+    global count
+    for bracket in args:
+        if brackets.count(bracket[0]) <= brackets.count(bracket[1]):
+            count += brackets.count(bracket[0])
+        else:
+            count += brackets.count(bracket[1])
+
+
+check_count(('{', '}'), ('[', ']'), ('(', ')'))
+
 print(count)
+
+counter_dict = {}
+for i in brackets:
+    if i in counter_dict:
+        counter_dict[i] += 1
+    else:
+        counter_dict.__setitem__(i, 1)
+print(counter_dict)
+
+
+mix = "Al*97FY*Rd!vg$v"
+last = ""
+out = [x for x in mix]
+for i, char in enumerate(out):
+    if 48 <= ord(char) <= 57:
+        out[i] = '0'
+    elif 32 <= ord(char) <= 47:
+        out[i] = '#'
+    elif 65 <= ord(char) <= 90:
+        out[i] = chr(ord(char) + 32)
+    elif 97 <= ord(char) <= 122:
+        out[i] = chr(ord(char) - 32)
+
+for j in out:
+    last += j
+print(last)
