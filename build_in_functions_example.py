@@ -41,6 +41,8 @@ def do_map():
     print(list(filter(lambda score: [y for x, y in score.items()] >= [50], result)))
 
 
+print(list(map(lambda x: x % 2 == 0, (1, 2))))
+print(list(filter(lambda x: x % 2 == 0, (1, 2))))
 print("1. Goto enumeration")
 print("2. Goto filter")
 print("3. Goto zip")
@@ -51,12 +53,16 @@ while isContinue:
     match choice:
         case 1:
             enumeration()
+            break
         case 2:
             do_filter()
+            break
         case 3:
             do_zip()
+            break
         case 4:
             do_map()
+            break
         case _:
             print("wrong input")
             break

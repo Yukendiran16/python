@@ -59,3 +59,4 @@ print(reduce(lambda x, y: x + y, matrix))
 
 # using list comprehension
 print([i for row in matrix for i in row])
+

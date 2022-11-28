@@ -24,49 +24,78 @@ from functools import reduce
 # *********************************************************************************************************************
 
 
-def add(a, b):
-    return a + b
+# def add(a, b):
+#     return a + b
+
+#
+# def sub(a=20, b=20):
+#     return a - b
+#
+#
+# def multiply(a):
+#     result = 1
+#     for i in a:
+#         result *= i
+#     return result
+#
+#
+# def even(*number_list):
+#     return list(x for x in number_list if x % 2 == 0)
+#
+#
+# def math_equation(x, y, /, d, *, a, b):
+#     return x + y - d * a / b
+#
+#
+# def book_author(**library_dict):
+#     return {x: y for x, y in library_dict.items()}
+#
+#
+# def multi_arguments(a, b, *x):
+#     return [a, b, [c for c in x]]
+#
+#
+# def printing(*a):
+#     return a
+#
+#
+# print(list(zip(map(add, [1, 2, 3, 4, 5], (5, 4, 3, 2, 1)), filter(even, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))))
+# print(list(zip(map(add, [1, 2, 3, 4, 5], (5, 4, 3, 2, 1)), range(1, 10))))
+# print(list(map(multi_arguments, zip([1, 2, 3, 4, 5], (5, 4, 3, 2, 1)),
+#                                     filter(even, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))))
+# print(list(filter(printing, zip(zip([1, 2, 3, 4, 5], [6, 7, 8, 9, 10]),
+#                                     map(add, [1, 2, 3, 4, 5], (5, 4, 3, 2, 1))))))
+# print(list(zip(map(add, [1, 2, 3, 4, 5], filter(even, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])))))
+# print(list(zip(filter(even, map(add, [1, 2, 3, 4, 5], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])))))
+# print(reduce(add, range(100)))
+# print(reduce(printing, range(10)))
+# print(reduce(multi_arguments, range(10)))
+# # print(list(zip(map(add, [1, 2, 3, 4, 5], (5, 4, 3, 2, 1)), reduce(add, range(50)))))
+# # print(tuple(zip([1, 2, 3, 4, 5], (5, 4, 3, 2, 1), reduce(add, range(50)))))
 
 
-def sub(a=20, b=20):
-    return a - b
+# a = "do something-kasi"
+# b = a.split(" ")
+# c = ""
+# for i in b:
+#     if not(i.isalpha()) and not(i.isdigit()):
+#         j = i.split("-")
+#         for k in j:
+#             if k == j[-1]:
+#                 c += k[::-1]
+#             else:
+#                 c += k[::-1] + "-"
+#     else:
+#         c += i[::-1] + " "
+# print(c)
 
-
-def multiply(a):
-    result = 1
-    for i in a:
-        result *= i
-    return result
-
-
-def even(*number_list):
-    return list(x for x in number_list if x % 2 == 0)
-
-
-def math_equation(x, y, /, d, *, a, b):
-    return x + y - d * a / b
-
-
-def book_author(**library_dict):
-    return {x: y for x, y in library_dict.items()}
-
-
-def multi_arguments(a, b, *x):
-    return [a, b, [c for c in x]]
-
-
-def printing(*a):
-    return a
-
-
-print(list(zip(map(add, [1, 2, 3, 4, 5], (5, 4, 3, 2, 1)), filter(even, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))))
-print(list(zip(map(add, [1, 2, 3, 4, 5], (5, 4, 3, 2, 1)), range(1, 10))))
-print(list(map(multi_arguments, zip([1, 2, 3, 4, 5], (5, 4, 3, 2, 1)), filter(even, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))))
-print(list(filter(printing, zip(zip([1, 2, 3, 4, 5], [6, 7, 8, 9, 10]), map(add, [1, 2, 3, 4, 5], (5, 4, 3, 2, 1))))))
-print(list(zip(map(add, [1, 2, 3, 4, 5], filter(even, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])))))
-print(list(zip(filter(even, map(add, [1, 2, 3, 4, 5], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])))))
-print(reduce(add, range(100)))
-print(reduce(printing, range(10)))
-print(reduce(multi_arguments, range(10)))
-# print(list(zip(map(add, [1, 2, 3, 4, 5], (5, 4, 3, 2, 1)), reduce(add, range(50)))))
-# print(tuple(zip([1, 2, 3, 4, 5], (5, 4, 3, 2, 1), reduce(add, range(50)))))
+brackets = ['[', ']', '{', '}', '{', '{', '}', '{', '{', '}', '(', '{', '{', '}', '(', ')']
+count = 0
+for value, open_bracket in enumerate(brackets):
+    if open_bracket == chr(40) or open_bracket == chr(123) or open_bracket == chr(91):
+        brackets.pop(value)
+        for index, close_bracket in enumerate(brackets, value):
+            if close_bracket == chr(41) or close_bracket == chr(125) or close_bracket == chr(93):
+                brackets.pop(index)
+                count += 1
+print(count)
