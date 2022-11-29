@@ -1,13 +1,13 @@
 # # from decorator import decorator
-#
-# print("\n**************************************************")
-# """Functions are first-class objects in Python. As a result,
-# they have all of the attributes of an object, and we may handle them
-# as such by assigning them to variables and passing them as
-# arguments to other functions as arguments."""
-#
-#
-# # assigning function to a variable
+
+print("\n**************************************************")
+"""Functions are first-class objects in Python. As a result,
+they have all of the attributes of an object, and we may handle them
+as such by assigning them to variables and passing them as
+arguments to other functions as arguments."""
+
+
+# assigning function to a variable
 # def site():
 #     """This the sample program for creating a function and assign
 #     to a variable then access the function when calling the variable"""
@@ -22,8 +22,8 @@
 # print("**************************************************")
 #
 #
-# # passing functions as arguments.
-# # one function return another function
+# passing functions as arguments.
+# one function return another function
 # def sqrt(num):
 #     """It will be return addition of 100 and value from square function returns."""
 #     return 100 + square(num)
@@ -75,25 +75,25 @@
 # print("**************************************************")
 #
 #
-# def my_decor(func):
-#     """It returns what is obtained from inner function of my_wrap"""
-#
-#     def my_wrap():
-#         """It will be returns some outputs"""
-#         print("Decorator Function")
-#         return func()
-#
-#     return my_wrap
-#
-#
-# def my_function():
-#     """It will be returns some outputs"""
-#     print("Main Function")
-#
-#
-# my_function = my_decor(my_function)
-# my_function()
-# print("**************************************************")
+def my_decor(func):
+    """It returns what is obtained from inner function of my_wrap"""
+
+    def my_wrap():
+        """It will be returns some outputs"""
+        print("Decorator Function")
+        return func()
+
+    return my_wrap
+
+
+def my_function():
+    """It will be returns some outputs"""
+    print("Main Function")
+
+
+my_function = my_decor(my_function)
+my_function()
+print("**************************************************")
 #
 #
 # def my_decor(func):
@@ -214,96 +214,96 @@
 # product(2, 2)
 #
 
-import requests
-from functools import wraps
-from flask import Flask, request, abort
-import functools
-
-app = Flask(__name__)
-
-
-def validate_json(*expected_args):  # 1
-    def decorator_validate_json(func):
-        @functools.wraps(func)
-        def wrapper_validate_json(*args, **kwargs):
-            json_object = request.get_json()
-            for expected_arg in expected_args:  # 2
-                if expected_arg not in json_object:
-                    abort(400)
-            return func(*args, **kwargs)
-
-        return wrapper_validate_json
-
-    return decorator_validate_json
+# import requests
+# from functools import wraps
+# from flask import Flask, request, abort
+# import functools
+#
+# app = Flask(__name__)
 
 
-@app.route("/grade", methods=["POST"])
-@validate_json("student_id")
-def update_grade():
-    json_data = request.get_json()
-    # Update database.
-    return "success!"
+# def validate_json(*expected_args):  # 1
+#     def decorator_validate_json(func):
+#         @functools.wraps(func)
+#         def wrapper_validate_json(*args, **kwargs):
+#             json_object = request.get_json()
+#             for expected_arg in expected_args:  # 2
+#                 if expected_arg not in json_object:
+#                     abort(400)
+#             return func(*args, **kwargs)
+#
+#         return wrapper_validate_json
+#
+#     return decorator_validate_json
+#
+#
+# @app.route("/grade", methods=["POST"])
+# @validate_json("student_id")
+# def update_grade():
+#     json_data = request.get_json()
+#     # Update database.
+#     return "success!"
 
 
-class LimitQuery:
-
-    def __init__(self, func):
-        self.func = func
-        self.count = 0
-
-    def __call__(self, *args, **kwargs):
-        self.limit = args[0]
-        if self.count < self.limit:
-            self.count += 1
-            return self.func(*args, **kwargs)
-        else:
-            print(f'No queries left. All {self.count} queries used.')
-            return
-
-
-@LimitQuery
-def get_coin_price(limit):
-    """View the Bitcoin Price Index (BPI)"""
-
-    url = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
-
-    if url.status_code == 200:
-        text = url.json()
-        return f"${float(text['bpi']['USD']['rate_float']):.2f}"
-
-
-print(get_coin_price(5))
-print(get_coin_price(5))
-print(get_coin_price(5))
-print(get_coin_price(5))
-print(get_coin_price(5))
-print(get_coin_price(5))
-
-
-def currency(fn):
-    @wraps(fn)
-    def wrapper(*args, **kwargs):
-        result = fn(*args, **kwargs)
-        return f'${result}'
-
-    return wrapper
-
-
-@currency
-def net_price(price, tax):
-    """ calculate the net price from price and tax
-    Arguments:
-        price: the selling price
-        tax: value added tax or sale tax
-    Return
-        the net price
-    """
-    return price * (1 + tax)
-
-
-print(net_price(1000, 12))
-help(net_price)
-print(net_price.__name__)
+# class LimitQuery:
+#
+#     def __init__(self, func):
+#         self.func = func
+#         self.count = 0
+#
+#     def __call__(self, *args, **kwargs):
+#         self.limit = args[0]
+#         if self.count < self.limit:
+#             self.count += 1
+#             return self.func(*args, **kwargs)
+#         else:
+#             print(f'No queries left. All {self.count} queries used.')
+#             return
+#
+#
+# @LimitQuery
+# def get_coin_price(limit):
+#     """View the Bitcoin Price Index (BPI)"""
+#
+#     url = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+#
+#     if url.status_code == 200:
+#         text = url.json()
+#         return f"${float(text['bpi']['USD']['rate_float']):.2f}"
+#
+#
+# print(get_coin_price(5))
+# print(get_coin_price(5))
+# print(get_coin_price(5))
+# print(get_coin_price(5))
+# print(get_coin_price(5))
+# print(get_coin_price(5))
+#
+#
+# def currency(fn):
+#     @wraps(fn)
+#     def wrapper(*args, **kwargs):
+#         result = fn(*args, **kwargs)
+#         return f'${result}'
+#
+#     return wrapper
+#
+#
+# @currency
+# def net_price(price, tax):
+#     """ calculate the net price from price and tax
+#     Arguments:
+#         price: the selling price
+#         tax: value added tax or sale tax
+#     Return
+#         the net price
+#     """
+#     return price * (1 + tax)
+#
+#
+# print(net_price(1000, 12))
+# help(net_price)
+# print(net_price.__name__)
 
 
 # def accepts(*types):

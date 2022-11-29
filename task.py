@@ -109,15 +109,6 @@ check_count(('{', '}'), ('[', ']'), ('(', ')'))
 
 print(count)
 
-counter_dict = {}
-for i in brackets:
-    if i in counter_dict:
-        counter_dict[i] += 1
-    else:
-        counter_dict.__setitem__(i, 1)
-print(counter_dict)
-
-
 mix = "Al*97FY*Rd!vg$v"
 last = ""
 out = [x for x in mix]
