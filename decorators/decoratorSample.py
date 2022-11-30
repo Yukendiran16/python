@@ -34,48 +34,48 @@
 # evaluate("2+3-54+43*4/3", "3+4-45*45/2", exp1="12+34-32*4+34/4")
 
 
-# def add_s_gst(function):
-#
-#     def add_tax(*args, **kwargs):
-#         for amount in args:
-#             print("S_GST for your bill: ", amount * 0.2)
-#             print("State government GST added.")
-#             amount += amount * 0.2
-#             function(amount)
-#         for amount in kwargs.values():
-#             print("S_GST for your bill: ", amount * 0.2)
-#             print("State government GST added.")
-#             amount += amount * 0.2
-#             function(amount)
-#
-#     return add_tax
-#
-#
-# def add_c_gst(function):
-#
-#     def add_tax(*args, **kwargs):
-#         for amount in args:
-#             print("C_GST for your bill: ", amount * 0.3)
-#             print("Central government GST added.")
-#             amount += amount * 0.3
-#             function(amount)
-#         for amount in kwargs.values():
-#             print("C_GST for your bill: ", amount * 0.3)
-#             print("Central government GST added.")
-#             amount += amount * 0.3
-#             function(amount)
-#
-#     return add_tax
-#
-#
-# @add_c_gst
-# @add_s_gst
-# def calculate_bill_amount(*args, **kwargs):
-#     """It calculates the total bill with all tax to be added"""
-#     for amount in args:
-#         print("Bill amount is : ", amount)
-#     for name, amount in kwargs.items():
-#         print("Bill name : ", name, "\nBill amount is : ", amount)
-#
-#
-# calculate_bill_amount(1000)
+def add_s_gst(function):
+
+    def add_tax(*args, **kwargs):
+        for amount in args:
+            print("S_GST for your bill: ", amount * 0.2)
+            print("State government GST added.")
+            amount += amount * 0.2
+            function(amount)
+        for amount in kwargs.values():
+            print("S_GST for your bill: ", amount * 0.2)
+            print("State government GST added.")
+            amount += amount * 0.2
+            function(amount)
+
+    return add_tax
+
+
+def add_c_gst(function):
+
+    def add_tax(*args, **kwargs):
+        for amount in args:
+            print("C_GST for your bill: ", amount * 0.3)
+            print("Central government GST added.")
+            amount += amount * 0.3
+            function(amount)
+        for amount in kwargs.values():
+            print("C_GST for your bill: ", amount * 0.3)
+            print("Central government GST added.")
+            amount += amount * 0.3
+            function(amount)
+
+    return add_tax
+
+
+@add_c_gst
+@add_s_gst
+def calculate_bill_amount(*args, **kwargs):
+    """It calculates the total bill with all tax to be added"""
+    for amount in args:
+        print("Bill amount is : ", amount)
+    for name, amount in kwargs.items():
+        print("Bill name : ", name, "\nBill amount is : ", amount)
+
+
+calculate_bill_amount(1000)
