@@ -35,6 +35,7 @@
 
 
 def add_s_gst(function):
+    print("Coming to calculate S_GST")
 
     def add_tax(*args, **kwargs):
         for amount in args:
@@ -52,6 +53,7 @@ def add_s_gst(function):
 
 
 def add_c_gst(function):
+    print("Coming to calculate C_GST")
 
     def add_tax(*args, **kwargs):
         for amount in args:
@@ -72,6 +74,7 @@ def add_c_gst(function):
 @add_s_gst
 def calculate_bill_amount(*args, **kwargs):
     """It calculates the total bill with all tax to be added"""
+    print("Calculate bill")
     for amount in args:
         print("Bill amount is : ", amount)
     for name, amount in kwargs.items():

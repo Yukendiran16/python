@@ -1,4 +1,5 @@
 class Bike(object):
+    """This class is used to create properties of bike and access the properties"""
     # class variable
     bike_show = "bike on the road vibes are good"
 

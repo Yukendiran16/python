@@ -56,5 +56,3 @@ payroll.add(HourlyEmployee('David', 'Wilson', 150, 100))
 payroll.add(HourlyEmployee('Kevin', 'Miller', 100, 150))
 
 payroll.print()
-
-print(Employee.__dict__)

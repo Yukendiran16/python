@@ -1,27 +1,33 @@
 class Employee:
-    # constructor
+    """This class used to create properties for Employee
+    object and access the properties of Employee"""
+    # constructor of the class it initialize the object
     def __init__(self, name, salary, project):
         # data members
-        self.name = name
-        self.__salary = salary
-        self._project = project
+        self.name = name         # public variable
+        self.__salary = salary   # private variable declare by using __ prefix of the attribute
+        self._project = project  # protected variable declare by using _ prefix of the attribute
 
     # method
     # to display employee's details
     def show(self):
+        """Display the properties of Employee object"""
         # accessing public data member
         print("Name: ", self.name, 'Salary:', self.__salary)
 
     # method
     def work(self):
+        """Display the work status of Employee object"""
         print(self.name, 'is working on', self._project)
 
     # getter method
     def get_salary(self):
+        """This method used to get value of private variable salary"""
         return self.__salary
 
     # setter method
     def set_salary(self, salary):
+        """This method used to set value of  private variable salary"""
         self.__salary = salary
 
 

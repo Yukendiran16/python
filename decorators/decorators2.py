@@ -11,7 +11,7 @@ def simple_decorator(decorator):
      your decorator, and it will automatically preserve the
      docstring and function attributes of functions to which
     it is applied."""
-
+    
     def new_decorator(f):
         g = decorator(f)
         g.__name__ = f.__name__
