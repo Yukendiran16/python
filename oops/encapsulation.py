@@ -48,7 +48,7 @@ employee.set_salary(25000)
 print('Name:', employee.name, employee.get_salary())
 
 # direct access to private member using name mangling
-print('Salary:', employee._Employee__salary)
+print('Salary:', employee.__salary)
 
 # Direct access protected data member
 print('Project:', employee._project)
