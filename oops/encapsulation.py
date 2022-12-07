@@ -2,7 +2,7 @@ class Employee:
     """This class used to create properties for Employee
     object and access the properties of Employee"""
     # constructor of the class it initialize the object
-    def __init__(self, name, salary, project):
+    def __init__(self, name='name', salary=0, project='project'):
         # data members
         self.name = name         # public variable
         self.__salary = salary   # private variable declare by using __ prefix of the attribute
@@ -48,7 +48,7 @@ employee.set_salary(25000)
 print('Name:', employee.name, employee.get_salary())
 
 # direct access to private member using name mangling
-print('Salary:', employee.__salary)
+print('Salary:', employee._Employee__salary)
 
 # Direct access protected data member
 print('Project:', employee._project)
