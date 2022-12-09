@@ -2,134 +2,94 @@ import os
 from datetime import datetime
 import glob
 
-old_name = r"E:\demos\files\reports\details.txt"
-new_name = r"E:\demos\files\reports\new_details.txt"
 
-if os.path.isfile(new_name):
-    print("The file already exists")
-else:
-    # Rename the file
-    os.rename(old_name, new_name)
+def rename_file(old, new):
+    """
+    This method used to rename the file name without
+    changing file and file directory
+    :var old file name, new file name
+    :return if the file is exists throw a message else nothing to pass
 
+    """
 
-old_name = r"E:\demos\files\reports\details.txt"
-new_name = r"E:\demos\files\reports\new_details.txt"
+    directory = r"C:/Users/lenovo/Documents/"
 
-# enclosing inside try-except
-try:
-    os.rename(old_name, new_name)
-except FileExistsError:
-    print("File already Exists")
-    print("Removing existing file")
-    # skip the below code
-    # if you don't' want to forcefully rename
-    os.remove(new_name)
-    # rename it
-    os.rename(old_name, new_name)
-    print('Done renaming a file')
+    if os.path.isfile(directory + new):
+        print("The file already exists")
+    else:
+        # Rename the file
+        os.rename(directory + old, directory + new)
 
 
-folder = r'E:\demos\files\reports\\'
-count = 1
-# count increase by 1 in each iteration
-# iterate all files from a directory
-for file_name in os.listdir(folder):
-    # Construct old file name
-    source = folder + file_name
+def change_folder_and_rename_file(old, new):
+    """
+    This method used to rename the file name without
+    changing file and also change file directory
+    :var old folder name, new folder name
+    :return if the file is exists throw a message else nothing to pass
 
-    # Adding the count to the new file name and extension
-    destination = folder + "sales_" + str(count) + ".txt"
+    """
 
-    # Renaming the file
-    os.rename(source, destination)
-    count += 1
-print('All Files Renamed')
+    directory = r"C:/Users/lenovo/"
 
-print('New Names are')
-# verify the result
-res = os.listdir(folder)
-print(res)
+    if os.path.isfile(directory + new):
+        print("The file already exists")
+    else:
+        # Rename the file
+        os.rename(directory + old, directory + new)
 
 
-files_to_rename = ['sales_1.txt', 'sales_4.txt']
-folder = r"E:\demos\files\reports\\"
+def rename_multiple_files(old, new):
+    """
+    This method used to rename the multiple files name without
+    changing file and also change file directory
+    :var folder name, new file name
+    :return if the file is exists throw a message else nothing to pass
 
-# Iterate through the folder
-for file in os.listdir(folder):
-    # Checking if the file is present in the list
-    if file in files_to_rename:
-        # construct current name using file name and path
-        old_name = os.path.join(folder, file)
-        # get file name without extension
-        only_name = os.path.splitext(file)[0]
+    """
 
-        # Adding the new name with extension
-        new_base = only_name + '_new' + '.txt'
-        # construct full file path
-        new_name = os.path.join(folder, new_base)
+    folder = r"C:/Users/lenovo/Documents/" + old + "/"
+    # count increase by 1 in each iteration
+    # iterate all files from a directory
+    for value, file_name in enumerate(os.listdir(folder)):
+        # Construct old file name
+        source = folder + file_name
+
+        # Adding the count to the new file name and extension
+        destination = folder + new + "day" + str(value) + ".txt"
 
         # Renaming the file
-        os.rename(old_name, new_name)
-
-# verify the result
-res = os.listdir(folder)
-print(res)
-
-# adding date-time to the file name
-current_timestamp = datetime.today().strftime('%d-%b-%Y')
-old_name = r"E:\demos\files\reports\sales.txt"
-new_name = r"E:\demos\files\reports\sales" + current_timestamp + ".txt"
-os.rename(old_name, new_name)
+        os.rename(source, destination)
+    print('All Files Renamed')
+    print('New Names are')
+    # verify the result
+    res = os.listdir(folder)
+    print(res)
 
 
-path = r"E:\demos\files\reports\\"
-# search text files starting with the word "sales"
-pattern = path + "sales" + "*.txt"
-
-# List of the files that match the pattern
-result = glob.glob(pattern)
-
-# Iterating the list with the count
-count = 1
-for file_name in result:
-    old_name = file_name
-    new_name = path + 'revenue_' + str(count) + ".txt"
-    os.rename(old_name, new_name)
-    count = count + 1
-
-# printing all revenue txt files
-res = glob.glob(path + "revenue" + "*.txt")
-for name in res:
-    print(name)
-
-folder = "/Users/sample/eclipse-workspace/Sample/Files/Images/"
-for count, filename in enumerate(os.listdir(folder)):
-    oldname = folder + filename
-    newname = folder + "Emp_" + str(count + 1) + ".jpg"
-    os.rename(oldname, newname)
-
-# printing the changed names
-print(glob.glob(folder + "*.*"))
+print("1. rename file")
+print("2. Change folder")
+print("3. Change folder and change name")
+print("4. rename multiple files on time")
+choice = int(input("Enter one choice"))
+match choice:
+    case 1:
+        old_name = input("Enter your old file name : ")
+        new_name = input("Enter your new file name : ")
+        rename_file(old_name, new_name)
+    case 2:
+        old_name = input("Enter your file name with old folder name : ")
+        new_name = input("Enter your file name with new folder name : ")
+        change_folder_and_rename_file(old_name, new_name)
+    case 3:
+        old_name = input("Enter your old file name with old folder name : ")
+        new_name = input("Enter your new file name with new folder name : ")
+        change_folder_and_rename_file(old_name, new_name)
+    case 4:
+        old_name = input("Enter your folder name : ")
+        new_name = input("Enter your new file name : ")
+        rename_multiple_files(old_name, new_name)
+    case _:
+        print("you entered incorrect choice")
 
 
-# Old and new folder locations
-old_folder = r"E:\demos\files\reports\\"
-new_folder = r"E:\demos\files\new_reports\\"
-
-# Old and new file names
-old_name = old_folder + "expense.txt"
-new_name = new_folder + "expense.txt"
-
-# Moving the file to the another location
-
-os.rename(old_name, new_name)
-
-
-folder = "/Users/sample/eclipse-workspace/Sample/Files/Images/"
-for count, filename in enumerate(os.listdir(folder)):
-    oldname = folder + filename
-    newname = folder + "Emp_" + str(count + 1) + ".jpg"
-    os.rename(oldname, newname)
-
-# printing the changed names
-print(glob.glob(folder + "*.*"))
