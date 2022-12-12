@@ -41,3 +41,11 @@ for pet, breed in pets:
     group_pets[pet].append(breed)
 for pet, breeds in group_pets.items():
     print(pet, "->", breeds)
+
+s = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+d = defaultdict(list)
+for k, v in s:
+    d[k].append(v)
+
+print(sorted(d.items()))
+print(dict(s))

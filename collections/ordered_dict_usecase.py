@@ -31,7 +31,7 @@ class Employee:
 
     @staticmethod
     def create_csv():
-        with open('F:/py/employee.csv', 'w') as csvfile:
+        with open('employee.csv', 'x+') as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=('employee_id', 'name', 'role', 'mobile'))
             writer.writeheader()
             for employee in employees.values():

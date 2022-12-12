@@ -4,9 +4,9 @@ import re
 
 class FunnyString(UserString):
 
-    def __init__(self, sequence, seq):
+    def __init__(self, seq):
         super().__init__(seq)
-        self.data = re.sub(r'[^\w\s]', '', sequence)
+        self.data = seq
 
     # def fun(self):
     #     funny = ""
@@ -19,5 +19,5 @@ class FunnyString(UserString):
     #     print(funny)
 
 
-text = FunnyString('Hello! Welcome to My World!', 'a')
+text = FunnyString('Hello! Welcome to My World!')
 print(text)
