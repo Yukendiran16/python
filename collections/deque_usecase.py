@@ -29,3 +29,4 @@ while is_continue:
 
 print(weather_deque.pop().__dict__)
 print(weather_deque.popleft().__dict__)
+

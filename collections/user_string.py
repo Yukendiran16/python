@@ -1,23 +1,28 @@
-from collections import UserString
-import re
+from collections import UserString as US
 
 
-class FunnyString(UserString):
+# Here, we will create a Mutable String
+class User_string(US):
 
-    def __init__(self, seq):
-        super().__init__(seq)
-        self.data = seq
+    # Function to append to string
+    def append(self, s):
+        self.data += s
 
-    # def fun(self):
-    #     funny = ""
-    #     for idx in range(len(self.data)):
-    #         if not idx % 2:
-    #             funny += self.data[idx].upper()
-    #         else:
-    #             funny += self.data[idx].lower()
-    #
-    #     print(funny)
+        # Function to remove from string
+
+    def remove(self, s):
+        self.data = self.data.replace(s, "")
+
+    # Driver's code
 
 
-text = FunnyString('Hello! Welcome to My World!')
-print(text)
+s_1 = User_string("python")
+print("The Original String: ", s_1.data)
+
+# Here, we will Append to string
+s_1.append(" programming")
+print("String After Appending: ", s_1.data)
+
+# Here, we will Remove from string
+s_1.remove(" ")
+print("String after Removing: ", s_1.data)
