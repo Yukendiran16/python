@@ -42,12 +42,12 @@ def add_s_gst(function):
             print("S_GST for your bill: ", amount * 0.2)
             print("State government GST added.")
             amount += amount * 0.2
-            function(amount)
+            return function(amount)
         for amount in kwargs.values():
             print("S_GST for your bill: ", amount * 0.2)
             print("State government GST added.")
             amount += amount * 0.2
-            function(amount)
+            return function(amount)
 
     return add_tax
 
@@ -60,12 +60,12 @@ def add_c_gst(function):
             print("C_GST for your bill: ", amount * 0.3)
             print("Central government GST added.")
             amount += amount * 0.3
-            function(amount)
+            return function(amount)
         for amount in kwargs.values():
             print("C_GST for your bill: ", amount * 0.3)
             print("Central government GST added.")
             amount += amount * 0.3
-            function(amount)
+            return function(amount)
 
     return add_tax
 
@@ -76,9 +76,9 @@ def calculate_bill_amount(*args, **kwargs):
     """It calculates the total bill with all tax to be added"""
     print("Calculate bill")
     for amount in args:
-        print("Bill amount is : ", amount)
+        return "Bill amount is : ", amount
     for name, amount in kwargs.items():
         print("Bill name : ", name, "\nBill amount is : ", amount)
 
 
-calculate_bill_amount(1000)
+print(calculate_bill_amount(1000))

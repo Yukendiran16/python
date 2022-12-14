@@ -3,11 +3,10 @@ from PyPDF2 import PdfFileWriter
 from PyPDF2 import PdfFileMerger
 import PyPDF2
 import os
+import getpass
 
-pdf_path = "C:/Users/lenovo/Downloads/pdfs/Holiday List 2023.pdf"
 
-
-def read_pdf_line():
+def read_pdf_line(pdf_path = "C:/Users/lenovo/Downloads/pdfs/Holiday List 2023.pdf"):
     with open(pdf_path, 'rb') as f:
         pdf = PdfFileReader(f)
         pdfReader = PyPDF2.PdfFileReader(pdf_path)
@@ -22,47 +21,29 @@ def read_pdf_line():
 # read_pdf_line()
 
 
-# pass the path of the parent_folder
-def fetch_all_files(parent_folder: str):
-    target_files = []
-    for path, subdirs, files in os.walk(parent_folder):
-        for name in files:
-            target_files.append(os.path.join(path, name))
-    return target_files
+def merge_files():
+    merger = PdfFileMerger(strict=False)
+    os.chdir("C:/Users/lenovo/Downloads/")
+    print(os.listdir())
+    for items in os.listdir():
+        if items.endswith(".pdf"):
+            merger.append(items)
+    merger.write("./final_pdf")
 
 
-# pass the path of the output final file.pdf and the list of paths
-def merge_pdf(out_path: str, extracted_files: list[str]):
-    merger = PdfFileMerger()
-
-    for pdf in extracted_files:
-        merger.append(pdf)
-
-    merger.write(out_path)
-    merger.close()
+# merge_files()
+read_pdf_line(pdf_path="./final_pdf")
 
 
-# get a list of all the paths of the pdf
-parent_folder_path = 'C:/Users/lenovo/Downloads/pdfs'
-output_pdf_path = './final.pdf'
-
-extracted_files = fetch_all_files(parent_folder_path)
-# merge_pdf(output_pdf_path, extracted_files)
-
-
-def add_watermark():
-
-    with open(pdf_path, 'rb') as sample:
-        sample_pdf = PdfFileReader(sample)
-        with open("C:/Users/lenovo/Downloads/Sample-Watermark.png", "rb") as image:
-            sample_image = image.read()
-            file = sample_pdf.getPage(0)
-            mark = sample_image.getPage(0)
-            file.mergePage(mark)
-            pdf_writer = PdfFileWriter()
-            pdf_writer.addPage(file)
-            with open("output.pdf", 'wb') as output:
-                pdf_writer.write(output)
+def protect_file():
+    pdfWriter = PdfFileWriter()
+    pdf = PdfFileReader('C:/Users/lenovo/Downloads/extec18.pdf')
+    for page in range(pdf.numPages):
+        pdfWriter.addPage(pdf.getPage(page))
+    password = getpass(prompt='Enter password : ')
+    pdfWriter.encrypt(password)
+    with open('C:/Users/lenovo/Downloads/Holiday List 2023.pdf', 'r+') as file:
+        pdfWriter.write(f)
 
 
-add_watermark()
+# protect_file()
