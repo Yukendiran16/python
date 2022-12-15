@@ -38,6 +38,7 @@ def get_failure():
             if "Failed" in log:
                 fail = re.split(',|    ', log)
                 failed_log = (fail[0], fail[5], "Failed", fail[6].replace("\n", ""), "code")
+                print(failed_log)
                 file.writerow(failed_log)
 
 

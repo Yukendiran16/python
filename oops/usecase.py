@@ -1,3 +1,4 @@
+import unittest
 from abc import ABC, abstractmethod
 
 
@@ -5,7 +6,7 @@ def calculate_price(price):
     return price + price * 2.5 + 1000
 
 
-class Vehicle(ABC):
+class Vehicle(ABC, unittest.TestCase):
     """This class used to create properties for Vehicle
     object and access the properties of Vehicle"""
 
@@ -23,7 +24,8 @@ class Bike(Vehicle):
 
     # instance method
     def __init__(self, name='name', model='model', price=0, fuel_type='fuel', horse_power='0cc',
-                 fuel_capacity='0l', brand_name='brand', seat_count=0, max_speed=0, bike_type='bike'): 
+                 fuel_capacity='0l', brand_name='brand', seat_count=0, max_speed=0, bike_type='bike'):
+        super(Bike, self).__init__()
         self.name = name
         self.model = model
         self._price = self.__calculate_price(price)
@@ -85,7 +87,8 @@ class Bike(Vehicle):
 bikes = []
 honda = Bike('splendor', 'honda', 80000, 'petrol', '125CC', '10l', 'splendor125', 3, 100, 'normal')
 hero = Bike('splendor', 'honda', 80000, 'petrol', '125CC', '11l', 'splendor125', 3, 120, 'normal')
-print(bikes[0])
-print(bikes[1])
-print(honda.privacy())
+print(honda)
+print(hero)
 
+if __name__ == '__main__':
+    unittest.main()

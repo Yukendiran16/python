@@ -6,7 +6,7 @@ from collections import ChainMap
 
 
 class CompanyChainMap(ChainMap):
-    'Variant of ChainMap that allows direct updates to inner scopes'
+    """Variant of ChainMap that allows direct updates to inner scopes"""
 
     def __setitem__(self, key, value):
         for mapping in self.maps:

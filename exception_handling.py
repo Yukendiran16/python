@@ -64,6 +64,7 @@ class Employee:
 
     def set_salary(self, salary):
         self.salary = round(calculate_salary(salary), 2)
+        return self.salary
 
     def get_salary(self):
         return self.salary
@@ -74,7 +75,10 @@ class Employee:
         :param email: employee email
         :return: nothing
         """
-        self.email = email
+        if re.match('[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+', email):
+            self.email = email
+        else:
+            raise Exception("wrong mail pattern")
 
     def get_email(self):
         """
@@ -89,7 +93,9 @@ class Employee:
         :param role: employee role
         :return: nothing
         """
-        self.role = role
+        if role in ['SDE', 'QA']:
+            self.role = role
+            return role
 
     def get_role(self):
         """
@@ -104,7 +110,10 @@ class Employee:
         :param mobile: employee mobile
         :return: nothing
         """
-        self.mobile = mobile
+        if re.match('(?:\+\d{2})?\d{3,4}\D?\d{3}\D?\d{3}', mobile):
+            self.mobile = mobile
+        else:
+            raise Exception("wrong mobile pattern")
 
     def get_mobile(self):
         """
