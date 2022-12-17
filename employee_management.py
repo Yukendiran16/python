@@ -5,6 +5,7 @@ from collections import OrderedDict
 from collections import defaultdict
 from csv import DictWriter
 from csv import writer
+from datetime import date
 from datetime import datetime
 from typing import Optional, Dict
 
@@ -27,7 +28,7 @@ role_list = ['Software Developer', 'Quality Analyst', 'Manager', 'Human Resource
 leave_types = ['Casual Leave']
 employees = OrderedDict()
 leave_record = {}
-leaves = defaultdict()
+leaves = defaultdict(list)
 
 
 def generate():
@@ -281,8 +282,8 @@ class LeaveRecord:
     This the class for create leave record for employee
     """
 
-    def __init__(self, employee_id: str = "I2I", from_date: datetime = 12 / 12 / 2001,
-                 to_date: datetime = 12 / 12 / 2001,
+    def __init__(self, employee_id: str = "I2I", from_date: date = 12 / 12 / 2001,
+                 to_date: date = 12 / 12 / 2001,
                  leave_type: str = "", leave_purpose: str = "") -> None:
         self.employee_id = employee_id
         self.from_date = from_date
@@ -293,8 +294,8 @@ class LeaveRecord:
         self.leave_taken = 0
         self.leave_dates = leaves
 
-    def take_leave(self, employee_id: str = "I2I", from_date: datetime = 12 / 12 / 2001,
-                   to_date: datetime = 12 / 12 / 2001,
+    def take_leave(self, employee_id: str = "I2I", from_date: date = 12 / 12 / 2001,
+                   to_date: date = 12 / 12 / 2001,
                    leave_type: str = "", leave_purpose: str = "") -> None:
         """
         this the method to create leave record for an employee
@@ -394,8 +395,8 @@ class LeaveRecord:
 
     def take_record(self):
         for day in range(self.from_date.day, self.to_date.day):
-            new_date = datetime.now().replace(day, self.from_date.month, self.from_date.year)
-            leaves[self.employee_id] = new_date
+            new_date = datetime.now().replace(day=day, month=self.from_date.month, year=self.from_date.year)
+            leaves[self.employee_id].append(new_date)
         self.leave_dates = leaves
         self.leave_taken += len(leaves.get(self.employee_id))
         self.leave_avail -= len(leaves.get(self.employee_id))
@@ -457,14 +458,14 @@ def add_leave():
     while run:
         try:
             from_date = datetime.strptime(input("Enter date for leave from :"),
-                                          "%m/%d/%Y" or "%Y/%m/%d" or "%Y/%d/%m" or "%d/%m/%Y")
+                                          "%m/%d/%Y" or "%Y/%m/%d" or "%Y/%d/%m" or "%d/%m/%Y").date()
             break
         except ValueError:
             print("Please enter valid date")
     while run:
         try:
-            to_date = datetime.strptime(input("Enter date for leave from :"),
-                                        "%m/%d/%Y" or "%Y/%m/%d" or "%Y/%d/%m" or "%d/%m/%Y")
+            to_date = datetime.strptime(input("Enter date for to from :"),
+                                        "%m/%d/%Y" or "%Y/%m/%d" or "%Y/%d/%m" or "%d/%m/%Y").date()
             break
         except ValueError:
             print("Please enter valid date")
@@ -481,7 +482,7 @@ def add_leave():
 def view_leave_record():
     view_leave = input("Enter employee id : ")
     if view_leave in employees:
-        return leave_record[view_leave]
+        return leave_record.get(view_leave)
 
 
 def update_employee():

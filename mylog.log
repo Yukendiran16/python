@@ -91,3 +91,49 @@
 2022-12-17 17:47:36,860 - __main__ - INFO - salary calculated successfully
 2022-12-17 17:47:36,860 - __main__ - INFO - New employee object created id = I2I0
 2022-12-17 17:48:21,482 - __main__ - ERROR - enter correct choice
+2022-12-17 21:11:20,089 - __main__ - INFO - Main method start
+2022-12-17 21:11:43,964 - __main__ - INFO - Employee object initialized
+2022-12-17 21:11:43,964 - __main__ - INFO - Inside PF calculation
+2022-12-17 21:11:43,965 - __main__ - INFO - Inside Insurance calculation
+2022-12-17 21:11:43,965 - __main__ - INFO - salary calculated successfully
+2022-12-17 21:11:43,965 - __main__ - INFO - New employee object created id = I2I0
+2022-12-17 21:12:59,745 - __main__ - ERROR - object of type 'NoneType' has no len()
+2022-12-17 21:14:37,007 - __main__ - INFO - Main method start
+2022-12-17 21:14:58,683 - __main__ - INFO - Employee object initialized
+2022-12-17 21:14:58,684 - __main__ - INFO - Inside PF calculation
+2022-12-17 21:14:58,684 - __main__ - INFO - Inside Insurance calculation
+2022-12-17 21:14:58,684 - __main__ - INFO - salary calculated successfully
+2022-12-17 21:14:58,684 - __main__ - INFO - New employee object created id = I2I0
+2022-12-17 21:15:52,797 - __main__ - ERROR - object of type 'NoneType' has no len()
+2022-12-17 21:16:04,058 - __main__ - INFO - Main method start
+2022-12-17 21:16:48,171 - __main__ - INFO - Employee object initialized
+2022-12-17 21:16:48,173 - __main__ - INFO - Inside PF calculation
+2022-12-17 21:16:48,173 - __main__ - INFO - Inside Insurance calculation
+2022-12-17 21:16:48,174 - __main__ - INFO - salary calculated successfully
+2022-12-17 21:16:48,174 - __main__ - INFO - New employee object created id = I2I0
+2022-12-17 21:18:37,802 - __main__ - ERROR - day is out of range for month
+2022-12-17 21:26:32,736 - __main__ - INFO - Main method start
+2022-12-17 21:26:56,001 - __main__ - INFO - Employee object initialized
+2022-12-17 21:26:56,002 - __main__ - INFO - Inside PF calculation
+2022-12-17 21:26:56,003 - __main__ - INFO - Inside Insurance calculation
+2022-12-17 21:26:56,003 - __main__ - INFO - salary calculated successfully
+2022-12-17 21:26:56,003 - __main__ - INFO - New employee object created id = I2I0
+2022-12-17 21:27:36,256 - __main__ - ERROR - object of type 'datetime.datetime' has no len()
+2022-12-17 21:33:35,038 - __main__ - INFO - Main method start
+2022-12-17 21:34:06,731 - __main__ - INFO - Employee object initialized
+2022-12-17 21:34:06,732 - __main__ - INFO - Inside PF calculation
+2022-12-17 21:34:06,732 - __main__ - INFO - Inside Insurance calculation
+2022-12-17 21:34:06,732 - __main__ - INFO - salary calculated successfully
+2022-12-17 21:34:06,732 - __main__ - INFO - New employee object created id = I2I0
+2022-12-17 21:40:17,507 - __main__ - INFO - Main method start
+2022-12-17 21:40:51,679 - __main__ - INFO - Employee object initialized
+2022-12-17 21:40:51,680 - __main__ - INFO - Inside PF calculation
+2022-12-17 21:40:51,680 - __main__ - INFO - Inside Insurance calculation
+2022-12-17 21:40:51,680 - __main__ - INFO - salary calculated successfully
+2022-12-17 21:40:51,680 - __main__ - INFO - New employee object created id = I2I0
+2022-12-17 21:43:35,707 - __main__ - INFO - Main method start
+2022-12-17 21:44:07,383 - __main__ - INFO - Employee object initialized
+2022-12-17 21:44:07,384 - __main__ - INFO - Inside PF calculation
+2022-12-17 21:44:07,384 - __main__ - INFO - Inside Insurance calculation
+2022-12-17 21:44:07,385 - __main__ - INFO - salary calculated successfully
+2022-12-17 21:44:07,385 - __main__ - INFO - New employee object created id = I2I0
