@@ -1,0 +1,93 @@
+2022-12-17 08:47:26,949 - __main__ - WARNING - Main method start
+2022-12-17 09:35:45,596 - __main__ - WARNING - Main method start
+2022-12-17 09:36:02,261 - __main__ - INFO - Main method start
+2022-12-17 09:43:20,451 - __main__ - INFO - Main method start
+2022-12-17 09:43:56,614 - __main__ - INFO - Employee object initialized
+2022-12-17 09:43:56,615 - __main__ - INFO - Inside PF calculation
+2022-12-17 09:43:56,615 - __main__ - INFO - Inside Insurance calculation
+2022-12-17 09:43:56,615 - __main__ - INFO - salary calculated successfully
+
+2022-12-17 11:42:39,738 - __main__ - INFO - Main method start
+2022-12-17 11:43:24,306 - __main__ - INFO - Employee object initialized
+2022-12-17 11:43:24,307 - __main__ - INFO - Inside PF calculation
+2022-12-17 11:43:24,307 - __main__ - INFO - Inside Insurance calculation
+2022-12-17 11:43:24,307 - __main__ - INFO - salary calculated successfully
+2022-12-17 11:44:25,801 - __main__ - INFO - Main method start
+2022-12-17 11:44:49,708 - __main__ - INFO - Employee object initialized
+2022-12-17 11:44:49,708 - __main__ - INFO - Inside PF calculation
+2022-12-17 11:44:49,708 - __main__ - INFO - Inside Insurance calculation
+2022-12-17 11:44:49,708 - __main__ - INFO - salary calculated successfully
+2022-12-17 11:44:49,708 - __main__ - INFO - New employee object created id = I2I0
+2022-12-17 12:00:12,144 - __main__ - INFO - Main method start
+2022-12-17 12:21:45,932 - __main__ - INFO - Main method start
+2022-12-17 12:45:00,271 - __main__ - INFO - Main method start
+2022-12-17 12:45:02,837 - __main__ - ERROR - name 'user_action' is not defined
+2022-12-17 12:45:14,650 - __main__ - INFO - Main method start
+2022-12-17 15:09:43,561 - __main__ - INFO - Main method start
+2022-12-17 15:55:03,134 - __main__ - INFO - Main method start
+2022-12-17 15:55:30,322 - __main__ - INFO - Employee object initialized
+2022-12-17 15:55:30,322 - __main__ - INFO - Inside PF calculation
+2022-12-17 15:55:30,322 - __main__ - INFO - Inside Insurance calculation
+2022-12-17 15:55:30,322 - __main__ - INFO - salary calculated successfully
+2022-12-17 15:55:30,322 - __main__ - INFO - New employee object created id = I2I0
+2022-12-17 15:56:24,682 - __main__ - ERROR - 'Employee' object has no attribute 'keys'
+2022-12-17 15:58:31,899 - __main__ - INFO - Main method start
+2022-12-17 15:58:54,488 - __main__ - INFO - Employee object initialized
+2022-12-17 15:58:54,488 - __main__ - INFO - Inside PF calculation
+2022-12-17 15:58:54,488 - __main__ - INFO - Inside Insurance calculation
+2022-12-17 15:58:54,489 - __main__ - INFO - salary calculated successfully
+2022-12-17 15:58:54,489 - __main__ - INFO - New employee object created id = I2I0
+2022-12-17 15:59:16,413 - __main__ - ERROR - Something went wrong to create file
+2022-12-17 16:02:03,996 - __main__ - INFO - Main method start
+2022-12-17 16:02:41,141 - __main__ - INFO - Employee object initialized
+2022-12-17 16:02:41,141 - __main__ - INFO - Inside PF calculation
+2022-12-17 16:02:41,141 - __main__ - INFO - Inside Insurance calculation
+2022-12-17 16:02:41,141 - __main__ - INFO - salary calculated successfully
+2022-12-17 16:02:41,141 - __main__ - INFO - New employee object created id = I2I0
+2022-12-17 16:03:00,085 - __main__ - ERROR - 'tuple' object has no attribute 'keys'
+2022-12-17 16:03:27,220 - __main__ - INFO - Main method start
+2022-12-17 16:03:55,402 - __main__ - INFO - Employee object initialized
+2022-12-17 16:03:55,402 - __main__ - INFO - Inside PF calculation
+2022-12-17 16:03:55,402 - __main__ - INFO - Inside Insurance calculation
+2022-12-17 16:03:55,402 - __main__ - INFO - salary calculated successfully
+2022-12-17 16:03:55,402 - __main__ - INFO - New employee object created id = I2I0
+2022-12-17 16:04:23,390 - __main__ - ERROR - Something went wrong to create file
+2022-12-17 16:49:57,795 - __main__ - INFO - Main method start
+2022-12-17 16:50:59,021 - __main__ - INFO - Main method start
+2022-12-17 16:51:25,655 - __main__ - INFO - Employee object initialized
+2022-12-17 16:51:25,655 - __main__ - INFO - Inside PF calculation
+2022-12-17 16:51:25,655 - __main__ - INFO - Inside Insurance calculation
+2022-12-17 16:51:25,656 - __main__ - INFO - salary calculated successfully
+2022-12-17 16:51:25,656 - __main__ - INFO - New employee object created id = I2I0
+2022-12-17 16:54:49,701 - __main__ - INFO - Main method start
+2022-12-17 16:55:42,888 - __main__ - INFO - Employee object initialized
+2022-12-17 16:55:42,888 - __main__ - INFO - Inside PF calculation
+2022-12-17 16:55:42,889 - __main__ - INFO - Inside Insurance calculation
+2022-12-17 16:55:42,889 - __main__ - INFO - salary calculated successfully
+2022-12-17 16:55:42,889 - __main__ - INFO - New employee object created id = I2I0
+2022-12-17 17:25:48,024 - __main__ - INFO - Main method start
+2022-12-17 17:26:17,698 - __main__ - INFO - Employee object initialized
+2022-12-17 17:26:17,699 - __main__ - INFO - Inside PF calculation
+2022-12-17 17:26:17,699 - __main__ - INFO - Inside Insurance calculation
+2022-12-17 17:26:17,699 - __main__ - INFO - salary calculated successfully
+2022-12-17 17:26:17,699 - __main__ - INFO - New employee object created id = I2I0
+2022-12-17 17:29:09,435 - __main__ - INFO - Main method start
+2022-12-17 17:29:31,373 - __main__ - INFO - Employee object initialized
+2022-12-17 17:29:31,374 - __main__ - INFO - Inside PF calculation
+2022-12-17 17:29:31,374 - __main__ - INFO - Inside Insurance calculation
+2022-12-17 17:29:31,374 - __main__ - INFO - salary calculated successfully
+2022-12-17 17:29:31,374 - __main__ - INFO - New employee object created id = I2I0
+2022-12-17 17:30:42,362 - __main__ - INFO - Main method start
+2022-12-17 17:31:10,434 - __main__ - INFO - Employee object initialized
+2022-12-17 17:31:10,434 - __main__ - INFO - Inside PF calculation
+2022-12-17 17:31:10,434 - __main__ - INFO - Inside Insurance calculation
+2022-12-17 17:31:10,435 - __main__ - INFO - salary calculated successfully
+2022-12-17 17:31:10,435 - __main__ - INFO - New employee object created id = I2I0
+2022-12-17 17:32:24,685 - __main__ - ERROR - name 'count' is not defined
+2022-12-17 17:47:13,780 - __main__ - INFO - Main method start
+2022-12-17 17:47:36,859 - __main__ - INFO - Employee object initialized
+2022-12-17 17:47:36,860 - __main__ - INFO - Inside PF calculation
+2022-12-17 17:47:36,860 - __main__ - INFO - Inside Insurance calculation
+2022-12-17 17:47:36,860 - __main__ - INFO - salary calculated successfully
+2022-12-17 17:47:36,860 - __main__ - INFO - New employee object created id = I2I0
+2022-12-17 17:48:21,482 - __main__ - ERROR - enter correct choice

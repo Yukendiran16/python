@@ -1,4 +1,3 @@
-import unittest
 from abc import ABC, abstractmethod
 
 
@@ -6,7 +5,7 @@ def calculate_price(price):
     return price + price * 2.5 + 1000
 
 
-class Vehicle(ABC, unittest.TestCase):
+class Vehicle(ABC):
     """This class used to create properties for Vehicle
     object and access the properties of Vehicle"""
 
@@ -90,5 +89,3 @@ hero = Bike('splendor', 'honda', 80000, 'petrol', '125CC', '11l', 'splendor125',
 print(honda)
 print(hero)
 
-if __name__ == '__main__':
-    unittest.main()
