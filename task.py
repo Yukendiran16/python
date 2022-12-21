@@ -128,18 +128,24 @@
 #
 #
 #
-inputs = input()
-values = inputs.split(",")
-print(values)
-coupons = []
-result = 0
-if int(values[0]) < 50:
-    for i in range(int(values[0])):
-        x = int(input())
-        if x < 1000:
-            coupons.append(x)
-        else:
-            break
-    for j in range(0, len(coupons), int(values[1]) + 1):
-        result += coupons[j]
-    print(result)
+import re
+#
+# inputs = input()
+# values = inputs.split(",")
+# print(values)
+# coupons = []
+# result = 0
+# if int(values[0]) < 50:
+#     for i in range(int(values[0])):
+#         x = int(input())
+#         if x < 1000:
+#             coupons.append(x)
+#         else:
+#             break
+#     for j in range(0, len(coupons), int(values[1]) + 1):
+#         result += coupons[j]
+#     print(result)
+
+
+value = re.match("(([0-1]?[0-9]?[0-9]?\.)|(2?[0-4]?[0-9]?\.)|(2?5?[0-5]?\.)){3}([0-1]?[0-9]?[0-9]?)|(2?[0-4]?[0-9]?)|(2?5?[0-5]?)", "255.255.255.257")
+print(value)

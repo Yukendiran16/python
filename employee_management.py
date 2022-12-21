@@ -1,6 +1,5 @@
 import csv
 import re
-import logging
 from collections import OrderedDict
 from collections import defaultdict
 from csv import DictWriter
@@ -11,24 +10,15 @@ from typing import Optional, Dict
 
 from custom_exception import DataNotFoundException
 from custom_exception import PatternError
+from log import logger
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
-file_handler = logging.FileHandler('mylog.log')
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-file_handler.setFormatter(formatter)
-logger.addHandler(file_handler)
-console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.DEBUG)
-console_format = logging.Formatter('%(name)s - %(levelname)s - %(message)s')
-console_handler.setFormatter(console_format)
-logger.addHandler(console_handler)
 
 role_list = ['Software Developer', 'Quality Analyst', 'Manager', 'Human Resource']
 leave_types = ['Casual Leave']
 employees = OrderedDict()
 leave_record = {}
 leaves = defaultdict(list)
+skills = defaultdict(list)
 
 
 def generate():
@@ -43,7 +33,17 @@ def generate():
 
 
 def pf(function):
+    """
+
+    :param function:
+    :return:
+    """
     def sub_pf(*args):
+        """
+
+        :param args:
+        :return:
+        """
         logger.info("Inside PF calculation")
         salary = args[0] - args[0] * 15 / 100
 
@@ -53,7 +53,17 @@ def pf(function):
 
 
 def insurance(function):
+    """
+
+    :param function:
+    :return:
+    """
     def sub_insurance(*args):
+        """
+
+        :param args:
+        :return:
+        """
         logger.info("Inside Insurance calculation")
         salary = args[0] - args[0] * 5 / 100
 
@@ -65,6 +75,11 @@ def insurance(function):
 @pf
 @insurance
 def calculate_salary(*args):
+    """
+
+    :param args:
+    :return:
+    """
     logger.info("salary calculated successfully")
     return args[0] + 1000
 
@@ -81,12 +96,13 @@ class Employee:
     def __init__(self, employee_id: str = "I2I0", name: str = "name",
                  email: str = "abc@ideas2it.com",
                  role: str = "role", mobile: int = 0, salary: float = 0.0) -> None:
-        self.employee_id = employee_id
-        self.name = name
-        self.email = email
-        self.role = role
-        self.mobile = mobile
-        self.salary = salary
+        self.__employee_id = employee_id
+        self.__name = name
+        self.__email = email
+        self.__role = role
+        self.__mobile = mobile
+        self.__salary = salary
+        self.is_active = False
         logger.info("Employee object initialized")
 
     def create_employee(self, employee_id: str = "I2I0", name: str = "name",
@@ -117,15 +133,15 @@ class Employee:
         :param employee_id: employee employee_id
         :return: nothing
         """
-        self.employee_id = employee_id
-        return self.employee_id
+        self.__employee_id = employee_id
+        return self.__employee_id
 
     def get_employee_id(self):
         """
         getter method of an employee employee_id
         :return: employee employee_id
         """
-        return self.employee_id
+        return self.__employee_id
 
     def set_name(self, name):
         """
@@ -133,15 +149,15 @@ class Employee:
         :param name: employee name
         :return: nothing
         """
-        self.name = name
-        return self.name
+        self.__name = name
+        return self.__name
 
     def get_name(self):
         """
         getter method of an employee name
         :return: employee name
         """
-        return self.name
+        return self.__name
 
     def set_salary(self, salary):
         """
@@ -149,15 +165,15 @@ class Employee:
         :param salary: employee salary
         :return: nothing
         """
-        self.salary = round(calculate_salary(salary), 2)
-        return self.salary
+        self.__salary = round(calculate_salary(salary), 2)
+        return self.__salary
 
     def get_salary(self):
         """
         getter method of an employee salary
         :return: employee salary
         """
-        return self.salary
+        return self.__salary
 
     def set_email(self, email):
         """
@@ -166,17 +182,17 @@ class Employee:
         :return: nothing
         """
         if re.match('[a-z0-9_.+-]+@[a-z0-9-]+\.[a-z0-9-.]+', email):
-            self.email = email
+            self.__email = email
         else:
-            logger.error("wrong mail pattern at line 134")
-            raise PatternError("wrong mail pattern at line 134")
+            logger.error(f"mail pattern couldn't match for this {email}")
+            raise PatternError(f"mail pattern couldn't match for this {email}")
 
     def get_email(self):
         """
         getter method of an employee email
         :return: employee email
         """
-        return self.email
+        return self.__email
 
     def set_role(self, role):
         """
@@ -184,8 +200,8 @@ class Employee:
         :param role: employee role
         :return: nothing
         """
-        if role in ['SDE', 'QA']:
-            self.role = role
+        if role in role_list:
+            self.__role = role
             return role
 
     def get_role(self):
@@ -193,7 +209,7 @@ class Employee:
         getter method of an employee role
         :return: employee role
         """
-        return self.role
+        return self.__role
 
     def set_mobile(self, mobile):
         """
@@ -202,27 +218,35 @@ class Employee:
         :return: nothing
         """
         if re.match('(?:\+\d{2})?\d{3,4}\D?\d{3}\D?\d{3}', mobile):
-            self.mobile = mobile
+            self.__mobile = mobile
         else:
-            logger.error("wrong mobile pattern at line 169")
-            raise PatternError("wrong mobile pattern at line 169")
+            logger.error(f"mobile pattern couldn't match for this {mobile}")
+            raise PatternError(f"mobile pattern couldn't match for this {mobile}")
 
     def get_mobile(self):
         """
         getter method of an employee mobile
         :return: employee mobile
         """
-        return self.mobile
+        return self.__mobile
 
     @staticmethod
     def get_all() -> Dict:
+        """
+
+        :return:
+        """
         if len(employees) == 0:
-            logger.error("no data found at line 181")
-            raise DataNotFoundException("no data found at line 181")
+            logger.error(f"nothing to show because empty list")
+            raise DataNotFoundException(f"nothing to show because empty list")
         return employees
 
     @staticmethod
     def get_employee():
+        """
+
+        :return:
+        """
         print("Search By ->\n"
               "1. Employee Id\n"
               "2. Name\n"
@@ -231,28 +255,29 @@ class Employee:
         try:
             choice = int(input("Enter one choice : "))
         except ValueError:
-            print(logger.warning(""))
-            print("Your choice is wrong")
+            logger.warning(f"Your choice is wrong : {choice}")
+            print(f"Your choice is wrong : {choice}")
         match choice:
             case 1:
-                employee = employees.get(input("Enter employee Id : "))
-                if employee is not None:
+                employee_id = input("Enter employee Id : ")
+                employee = employees.get(employee_id)
+                if employee is not None and employee.is_active is False:
                     return employee
                 else:
-                    logger.error("Couldn't find employee by id at line 224")
-                    raise DataNotFoundException("Couldn't find employee at line 201")
+                    logger.error(f"Couldn't find employee by id {employee_id}")
+                    raise DataNotFoundException(f"Couldn't find employee by id {employee_id}")
             case 2:
                 name = input("Enter name : ")
                 for x, y in employees.items():
-                    if name is y.name:
+                    if name == y.name and y.is_active is False:
                         return employees.get(x)
                     else:
                         logger.error("Couldn't find employee by name at line 232")
                         raise DataNotFoundException("Couldn't find employee at line 208")
             case 3:
-                name = input("Enter email Id : ")
+                email = input("Enter email Id : ")
                 for x, y in employees.items():
-                    if name is y.email:
+                    if email == y.email and y.is_active is False:
                         return employees.get(x)
                     else:
                         logger.error("Couldn't find employee by mail at line 240")
@@ -282,14 +307,8 @@ class LeaveRecord:
     This the class for create leave record for employee
     """
 
-    def __init__(self, employee_id: str = "I2I", from_date: date = 12 / 12 / 2001,
-                 to_date: date = 12 / 12 / 2001,
-                 leave_type: str = "", leave_purpose: str = "") -> None:
-        self.employee_id = employee_id
-        self.from_date = from_date
-        self.to_date = to_date
-        self.leave_type = leave_type
-        self.leave_purpose = leave_purpose
+    def __init__(self, employee_id: str = "I2I") -> None:
+        self.__employee_id = employee_id
         self.leave_avail = 12
         self.leave_taken = 0
         self.leave_dates = leaves
@@ -307,11 +326,7 @@ class LeaveRecord:
         :return: nothing
         """
         self.set_employee_id(employee_id)
-        self.set_from_date(from_date)
-        self.set_to_date(to_date)
-        self.set_leave_type(leave_type)
-        self.set_leave_purpose(leave_purpose)
-        self.take_record()
+        self.take_record(from_date, to_date, leave_type, leave_purpose)
 
     def set_employee_id(self, employee_id):
         """
@@ -319,111 +334,99 @@ class LeaveRecord:
         :param employee_id: employee employee_id
         :return: nothing
         """
-        self.employee_id = employee_id
-        return self.employee_id
+        self.__employee_id = employee_id
+        return self.__employee_id
 
     def get_employee_id(self):
         """
         getter method of an employee employee_id
         :return: employee employee_id
         """
-        return self.employee_id
+        return self.__employee_id
 
-    def set_from_date(self, from_date):
+    def take_record(self, from_date, to_date, leave_type, leave_purpose):
         """
-        setter method of an employee from_date
-        :param from_date: employee from_date
-        :return: nothing
-        """
-        self.from_date = from_date
-        return self.from_date
 
-    def get_from_date(self):
+        :param from_date:
+        :param to_date:
+        :param leave_type:
+        :param leave_purpose:
+        :return:
         """
-        getter method of an employee from_date
-        :return: employee from_date
-        """
-        return self.from_date
-
-    def set_to_date(self, to_date):
-        """
-        setter method of an employee to_date
-        :param to_date: employee to_date
-        :return: nothing
-        """
-        self.to_date = to_date
-        return self.to_date
-
-    def get_to_date(self):
-        """
-        getter method of an employee to_date
-        :return: employee to_date
-        """
-        return self.to_date
-
-    def set_leave_purpose(self, leave_purpose):
-        """
-        setter method of an employee leave_purpose
-        :param leave_purpose: employee leave_purpose
-        :return: nothing
-        """
-        self.leave_purpose = leave_purpose
-        return self.leave_purpose
-
-    def get_leave_purpose(self):
-        """
-        getter method of an employee leave_purpose
-        :return: employee leave_purpose
-        """
-        return self.leave_purpose
-
-    def set_leave_type(self, leave_type):
-        """
-        setter method of an employee leave_type
-        :param leave_type: employee leave_type
-        :return: nothing
-        """
-        self.leave_type = leave_type
-        return self.leave_type
-
-    def get_leave_type(self):
-        """
-        getter method of an employee leave_type
-        :return: employee leave_type
-        """
-        return self.leave_type
-
-    def take_record(self):
-        for day in range(self.from_date.day, self.to_date.day):
-            new_date = datetime.now().replace(day=day, month=self.from_date.month, year=self.from_date.year)
-            leaves[self.employee_id].append(new_date)
-        self.leave_dates = leaves
+        for day in range(from_date.day, to_date.day):
+            new_date = datetime.now().replace(day=day, month=from_date.month, year=from_date.year)
+            leaves[self.employee_id].append({new_date: {'leave type': leave_type, 'leave_purpose': leave_purpose}})
+        self.leave_dates = leaves[self.employee_id]
         self.leave_taken += len(leaves.get(self.employee_id))
         self.leave_avail -= len(leaves.get(self.employee_id))
         leave_record[self.employee_id] = self
 
 
-def add_employee(run):
+class Skills:
+    """
+
+    """
+    def __init__(self, technology: str = "", version: str = "", experience: str = ""):
+        self.technology = technology
+        self.version = version
+        self.experience = experience
+
+    def add_skills(self, employee_id, technology, version, experience):
+        """
+
+        :param employee_id:
+        :param technology:
+        :param version:
+        :param experience:
+        :return:
+        """
+
+        self.technology = technology
+        self.version = version
+        self.experience = experience
+        skills[employee_id].append(self)
+
+    @staticmethod
+    def get_skills():
+        employee_id = input("Enter your employee Id :")
+        if employee_id in skills:
+            if skills.get(employee_id) is None:
+                raise DataNotFoundException("nothing to show")
+            else:
+                return skills.get(employee_id)
+        else:
+            raise DataNotFoundException(f"Couldn't find employee by id {employee_id}")
+
+
+def add_employee():
+    """
+
+    :return:
+    """
     name, role, mail, mobile, salary = 'a', 'a', 'a', 0, 0
-    while run:
+    isContinue = True
+    while isContinue:
         name = input("Enter employee name : ")
         if not re.match("[A-Z]+", name):
             print("name must be in uppercase letters")
         else:
             break
-    while run:
-        role = input("Enter employee role : ")
-        if role not in role_list:
-            print("invalid role type")
-        else:
+    while isContinue:
+        for i, j in enumerate(role_list, 1):
+            print(i, j)
+        role = input("Choose employee role : ")
+        if role.isdigit() and int(role) <= len(role_list):
+            role = role_list[int(role) - 1]
             break
-    while run:
+        else:
+            print("You entered wrong input")
+    while isContinue:
         mail = input("Enter employee mail : ")
         if not re.match('[a-z_.+-]+@[a-z-]+\.[a-z-.]+', mail):
             print("invalid mail pattern")
         else:
             break
-    while run:
+    while isContinue:
         try:
             mobile = input("Enter employee mobile : ")
             if not re.match('(?:\+\d{2})?\d{3,4}\D?\d{3}\D?\d{3}', mobile):
@@ -432,7 +435,7 @@ def add_employee(run):
                 break
         except ValueError:
             print("enter integer")
-    while run:
+    while isContinue:
         try:
             salary = int(input("Enter employee salary : "))
             if not re.match("[0-9]+", str(salary)):
@@ -446,60 +449,75 @@ def add_employee(run):
 
 
 def add_leave():
+    """
+
+    :return:
+    """
     leave = LeaveRecord()
     employee_id, from_date, to_date, leave_type, leave_purpose = 'a', '12/12/2001', '12/12/2001', 'a', 'a'
-    run = True
-    while run:
+    isContinue = True
+    while isContinue:
         employee_id = input("Enter employee id : ")
         if employee_id not in employees.keys():
-            print("Enter valid id")
+            logger.error(f"Couldn't find employee by id {employee_id}")
+            raise DataNotFoundException(f"Couldn't find employee by id {employee_id}")
         else:
             break
-    while run:
+    while isContinue:
         try:
             from_date = datetime.strptime(input("Enter date for leave from :"),
                                           "%m/%d/%Y" or "%Y/%m/%d" or "%Y/%d/%m" or "%d/%m/%Y").date()
             break
         except ValueError:
+            logger.warning("Please enter valid date")
             print("Please enter valid date")
-    while run:
+    while isContinue:
         try:
             to_date = datetime.strptime(input("Enter date for to from :"),
                                         "%m/%d/%Y" or "%Y/%m/%d" or "%Y/%d/%m" or "%d/%m/%Y").date()
             break
         except ValueError:
+            logger.warning("Please enter valid date")
             print("Please enter valid date")
-    while run:
-        leave_type = input("Enter leave type")
+    while isContinue:
+        leave_type = input("Enter leave type : ")
         if leave_type not in leave_types:
             print("Enter valid leave type")
         else:
             break
-    leave_purpose = input("Tell reason for your leave")
+    leave_purpose = input("Tell reason for your leave : ")
     leave.take_leave(employee_id, from_date, to_date, leave_type, leave_purpose)
 
 
 def view_leave_record():
+    """
+
+    :return:
+    """
     view_leave = input("Enter employee id : ")
     if view_leave in employees:
         return leave_record.get(view_leave)
 
 
 def update_employee():
+    """
+
+    :return:
+    """
     print("1. email\n"
           "2. role\n"
           "3. mobile")
-    update = int(input("Choose one option"))
+    update = int(input("Choose one option : "))
     employee = Employee.get_employee()
     match update:
         case 1:
-            employee.set_email(input("Enter mail id"))
+            employee.set_email(input("Enter mail id : "))
             return employee
         case 2:
-            employee.set_role(input("Enter role"))
+            employee.set_role(input("Enter role : "))
             return employee
         case 3:
-            employee.set_mobile(input("Enter mobile"))
+            employee.set_mobile(input("Enter mobile : "))
             return employee
         case _:
             print("wrong input")
@@ -530,24 +548,29 @@ def admin_action():
             print("enter correct choice")
         match choice:
             case 1:
-                add_employee(True)
-                add_next = input("if you want to add enter yes/no")
+                add_employee()
+                add_next = input("if you want to add enter yes/no : ")
                 if add_next == "yes":
-                    add_employee(True)
+                    add_employee()
             case 2:
                 print(Employee.get_employee().__dict__)
             case 3:
                 print(update_employee().__dict__)
             case 4:
-                if not employees.pop(input("Enter employee Id : ")):
-                    logger.error("no data found")
-                    raise DataNotFoundException("no data found")
+                employee_id = input("Enter employee Id : ")
+                employee = employees.get(employee_id)
+                if employee is None:
+                    logger.error(f"Couldn't find employee by id {employee_id}")
+                    raise DataNotFoundException(f"Couldn't find employee by id {employee_id}")
+                else:
+                    employee.is_active = True
             case 5:
                 Employee.create_csv(input("Enter file Directory : "))
             case 6:
                 employee_list = Employee.get_all().values()
                 for value in employee_list:
-                    print(value.__dict__)
+                    if value.is_active is False:
+                        print(value.__dict__)
             case 7:
                 break
             case _:
@@ -555,11 +578,15 @@ def admin_action():
 
 
 def user_action():
+    """
+
+    :return:
+    """
     is_continue = True
     while is_continue:
         print("1. Leave Record\n"
-              "2. Add skills\n"
-              "3.Exit")
+              "2. Skill \n"
+              "3. Exit")
         choice = 0
         try:
             choice = int(input("Enter choice  : "))
@@ -570,7 +597,7 @@ def user_action():
             case 1:
                 leave_action()
             case 2:
-                add_skills()
+                skill_action()
             case 3:
                 break
             case _:
@@ -578,6 +605,10 @@ def user_action():
 
 
 def leave_action():
+    """
+
+    :return:
+    """
     is_continue = True
     while is_continue:
         print("1. take leave\n"
@@ -593,7 +624,43 @@ def leave_action():
             case 1:
                 add_leave()
             case 2:
-                print(view_leave_record())
+                print(view_leave_record().__dict__)
+            case 3:
+                break
+            case _:
+                print("you entered wrong choice")
+
+
+def skill_action():
+    """
+
+    :return:
+    """
+    is_continue = True
+    while is_continue:
+        print("1. add skill\n"
+              "2. view skills\n"
+              "3. Exit")
+        choice = 0
+        try:
+            choice = int(input("Enter choice  : "))
+        except ValueError:
+            logger.error("enter correct choice")
+            print("enter correct choice")
+        match choice:
+            case 1:
+                skill = Skills()
+                employee_id = input("Enter Your employee id : ")
+                if employee_id not in employees:
+                    logger.error("employee Id not found")
+                    raise DataNotFoundException("employee Id not found")
+                technology = input("Enter skill to be add : ")
+                version = input("Enter version of the technology : ")
+                experience = input("Enter experience in month in technology : ")
+                skill.add_skills(employee_id, technology, version, experience)
+            case 2:
+                for s in Skills.get_skills():
+                    print(s.__dict__)
             case 3:
                 break
             case _:

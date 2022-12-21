@@ -6,7 +6,6 @@
 2022-12-17 09:43:56,615 - __main__ - INFO - Inside PF calculation
 2022-12-17 09:43:56,615 - __main__ - INFO - Inside Insurance calculation
 2022-12-17 09:43:56,615 - __main__ - INFO - salary calculated successfully
-
 2022-12-17 11:42:39,738 - __main__ - INFO - Main method start
 2022-12-17 11:43:24,306 - __main__ - INFO - Employee object initialized
 2022-12-17 11:43:24,307 - __main__ - INFO - Inside PF calculation
@@ -137,3 +136,117 @@
 2022-12-17 21:44:07,384 - __main__ - INFO - Inside Insurance calculation
 2022-12-17 21:44:07,385 - __main__ - INFO - salary calculated successfully
 2022-12-17 21:44:07,385 - __main__ - INFO - New employee object created id = I2I0
+2022-12-18 09:11:31,874 - __main__ - INFO - Main method start
+2022-12-18 09:12:01,689 - __main__ - INFO - Employee object initialized
+2022-12-18 09:12:01,689 - __main__ - INFO - Inside PF calculation
+2022-12-18 09:12:01,689 - __main__ - INFO - Inside Insurance calculation
+2022-12-18 09:12:01,689 - __main__ - INFO - salary calculated successfully
+2022-12-18 09:12:01,690 - __main__ - INFO - New employee object created id = I2I0
+2022-12-18 09:13:20,421 - __main__ - ERROR - invalid literal for int() with base 10: ''
+2022-12-18 09:13:24,904 - __main__ - ERROR - invalid literal for int() with base 10: ''
+2022-12-18 09:15:53,865 - __main__ - INFO - Main method start
+2022-12-18 09:37:02,956 - __main__ - INFO - Main method start
+2022-12-18 09:37:29,398 - __main__ - INFO - Employee object initialized
+2022-12-18 09:37:29,398 - __main__ - INFO - Inside PF calculation
+2022-12-18 09:37:29,398 - __main__ - INFO - Inside Insurance calculation
+2022-12-18 09:37:29,398 - __main__ - INFO - salary calculated successfully
+2022-12-18 09:37:29,398 - __main__ - INFO - New employee object created id = I2I0
+2022-12-18 09:54:05,226 - __main__ - INFO - Main method start
+2022-12-18 09:54:32,001 - __main__ - INFO - Employee object initialized
+2022-12-18 09:54:32,001 - __main__ - INFO - Inside PF calculation
+2022-12-18 09:54:32,001 - __main__ - INFO - Inside Insurance calculation
+2022-12-18 09:54:32,001 - __main__ - INFO - salary calculated successfully
+2022-12-18 09:54:32,001 - __main__ - INFO - New employee object created id = I2I0
+2022-12-18 09:55:14,932 - __main__ - ERROR - 'LeaveRecord' object has no attribute 'from_date'
+2022-12-18 09:55:56,720 - __main__ - INFO - Main method start
+2022-12-18 09:56:19,630 - __main__ - INFO - Employee object initialized
+2022-12-18 09:56:19,630 - __main__ - INFO - Inside PF calculation
+2022-12-18 09:56:19,630 - __main__ - INFO - Inside Insurance calculation
+2022-12-18 09:56:19,631 - __main__ - INFO - salary calculated successfully
+2022-12-18 09:56:19,631 - __main__ - INFO - New employee object created id = I2I0
+2022-12-18 11:30:03,965 - __main__ - INFO - Main method start
+2022-12-18 14:13:44,438 - __main__ - INFO - Main method start
+2022-12-18 14:16:30,951 - __main__ - INFO - Employee object initialized
+2022-12-18 14:16:30,952 - __main__ - INFO - Inside PF calculation
+2022-12-18 14:16:30,952 - __main__ - INFO - Inside Insurance calculation
+2022-12-18 14:16:30,952 - __main__ - INFO - salary calculated successfully
+2022-12-18 14:16:30,952 - __main__ - INFO - New employee object created id = I2I0
+2022-12-18 14:16:45,024 - __main__ - ERROR - name 'add_skills' is not defined
+2022-12-18 14:19:54,351 - __main__ - INFO - Main method start
+2022-12-18 14:20:28,653 - __main__ - INFO - Employee object initialized
+2022-12-18 14:20:28,653 - __main__ - INFO - Inside PF calculation
+2022-12-18 14:20:28,654 - __main__ - INFO - Inside Insurance calculation
+2022-12-18 14:20:28,654 - __main__ - INFO - salary calculated successfully
+2022-12-18 14:20:28,654 - __main__ - INFO - New employee object created id = I2I0
+2022-12-18 14:20:38,796 - __main__ - ERROR - type object 'Skills' has no attribute 'add_skill'
+2022-12-18 14:40:49,920 - __main__ - INFO - Main method start
+2022-12-18 14:41:02,794 - __main__ - INFO - Main method start
+2022-12-18 14:41:32,427 - __main__ - INFO - Employee object initialized
+2022-12-18 14:41:32,427 - __main__ - INFO - Inside PF calculation
+2022-12-18 14:41:32,428 - __main__ - INFO - Inside Insurance calculation
+2022-12-18 14:41:32,428 - __main__ - INFO - salary calculated successfully
+2022-12-18 14:41:32,428 - __main__ - INFO - New employee object created id = I2I0
+2022-12-18 14:42:06,220 - __main__ - ERROR - 'set' object has no attribute 'append'
+2022-12-18 14:42:34,251 - __main__ - INFO - Main method start
+2022-12-18 14:42:59,099 - __main__ - INFO - Employee object initialized
+2022-12-18 14:42:59,100 - __main__ - INFO - Inside PF calculation
+2022-12-18 14:42:59,100 - __main__ - INFO - Inside Insurance calculation
+2022-12-18 14:42:59,100 - __main__ - INFO - salary calculated successfully
+2022-12-18 14:42:59,100 - __main__ - INFO - New employee object created id = I2I0
+2022-12-18 14:43:39,646 - __main__ - ERROR - 'list' object has no attribute '__dict__'
+2022-12-18 14:57:09,326 - __main__ - INFO - Main method start
+2022-12-18 14:57:38,754 - __main__ - INFO - Employee object initialized
+2022-12-18 14:57:38,754 - __main__ - INFO - Inside PF calculation
+2022-12-18 14:57:38,754 - __main__ - INFO - Inside Insurance calculation
+2022-12-18 14:57:38,754 - __main__ - INFO - salary calculated successfully
+2022-12-18 14:57:38,754 - __main__ - INFO - New employee object created id = I2I0
+2022-12-18 15:00:00,571 - __main__ - ERROR - Couldn't find employee by name at line 232
+2022-12-18 15:00:00,571 - __main__ - ERROR - exception handled Couldn't find employee at line 208
+2022-12-18 15:00:29,393 - __main__ - ERROR - Couldn't find employee by mail at line 240
+2022-12-18 15:22:00,250 - __main__ - INFO - Main method start
+2022-12-18 15:22:23,780 - __main__ - INFO - Employee object initialized
+2022-12-18 15:22:23,781 - __main__ - INFO - Inside PF calculation
+2022-12-18 15:22:23,781 - __main__ - INFO - Inside Insurance calculation
+2022-12-18 15:22:23,781 - __main__ - INFO - salary calculated successfully
+2022-12-18 15:22:23,781 - __main__ - INFO - New employee object created id = I2I0
+2022-12-18 15:22:35,672 - __main__ - ERROR - Couldn't find employee by name at line 232
+2022-12-18 15:22:35,672 - __main__ - ERROR - exception handled Couldn't find employee at line 208
+2022-12-18 15:23:06,951 - __main__ - ERROR - Couldn't find employee by mail at line 240
+2022-12-18 15:24:49,135 - __main__ - INFO - Main method start
+2022-12-18 15:25:55,596 - __main__ - INFO - Employee object initialized
+2022-12-18 15:25:55,597 - __main__ - INFO - Inside PF calculation
+2022-12-18 15:25:55,597 - __main__ - INFO - Inside Insurance calculation
+2022-12-18 15:25:55,597 - __main__ - INFO - salary calculated successfully
+2022-12-18 15:25:55,597 - __main__ - INFO - New employee object created id = I2I0
+2022-12-18 15:32:18,068 - log - INFO - Main method start
+2022-12-18 19:52:51,309 - log - INFO - Main method start
+2022-12-18 19:52:56,382 - log - ERROR - name 're' is not defined
+2022-12-18 19:53:17,210 - log - INFO - Main method start
+2022-12-18 19:53:52,542 - log - INFO - Employee object initialized
+2022-12-18 19:53:52,543 - log - INFO - Inside PF calculation
+2022-12-18 19:53:52,543 - log - INFO - Inside Insurance calculation
+2022-12-18 19:53:52,543 - log - INFO - salary calculated successfully
+2022-12-18 19:53:52,543 - log - INFO - New employee object created id = I2I0
+2022-12-19 09:45:12,972 - log - INFO - Main method start
+2022-12-19 09:45:32,585 - log - INFO - Employee object initialized
+2022-12-19 09:45:32,585 - log - INFO - Inside PF calculation
+2022-12-19 09:45:32,585 - log - INFO - Inside Insurance calculation
+2022-12-19 09:45:32,585 - log - INFO - salary calculated successfully
+2022-12-19 09:45:32,585 - log - INFO - New employee object created id = I2I0
+2022-12-19 09:45:47,264 - log - ERROR - Couldn't find employee by id at line 224
+2022-12-19 09:45:47,264 - log - ERROR - exception handled Couldn't find employee at line 201
+2022-12-19 10:41:11,850 - log - INFO - Main method start
+2022-12-19 10:42:33,785 - log - INFO - Employee object initialized
+2022-12-19 10:42:33,786 - log - INFO - Inside PF calculation
+2022-12-19 10:42:33,786 - log - INFO - Inside Insurance calculation
+2022-12-19 10:42:33,786 - log - INFO - salary calculated successfully
+2022-12-19 10:42:33,786 - log - INFO - New employee object created id = I2I0
+2022-12-19 11:23:46,093 - log - INFO - Main method start
+2022-12-19 11:24:12,550 - log - INFO - Employee object initialized
+2022-12-19 11:24:12,551 - log - INFO - Inside PF calculation
+2022-12-19 11:24:12,551 - log - INFO - Inside Insurance calculation
+2022-12-19 11:24:12,551 - log - INFO - salary calculated successfully
+2022-12-19 11:24:12,551 - log - INFO - New employee object created id = I2I0
+2022-12-19 23:05:21,167 - log - INFO - Main method start
+2022-12-21 11:17:47,776 - log - INFO - Main method start
+2022-12-21 11:17:51,352 - log - ERROR - invalid literal for int() with base 10: 'ddd'

@@ -63,4 +63,4 @@ print(ordinals)
 ordinals = deque(["first", "second", "third"])
 print(ordinals[1])
 
-# print(ordinals[0:2])
+print(ordinals[0:2])

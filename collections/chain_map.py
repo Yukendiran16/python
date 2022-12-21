@@ -2,17 +2,20 @@ from collections import ChainMap
 
 numbers = {"one": 1, "two": 2}
 letters = {"a": "A", "b": "B"}
-
 alpha_nums = ChainMap(numbers, letters)
 print(alpha_nums.maps)
 
 dad = {"name": "John", "age": 35}
 mom = {"name": "Jane", "age": 31}
 family = ChainMap(mom, dad)
-print(family)
+print(list(family))
+print(family['name'])
+print(family.maps[1])
 
 son = {"name": "Mike", "age": 0}
 family = family.new_child(son)
+family = family.new_child(son)
+print(family.maps[1])
 
 for person in family.maps:
     print(person)

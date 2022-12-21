@@ -17,6 +17,7 @@ class User_string(US):
 
 
 s_1 = User_string("python")
+print(s_1.count('p'))
 print("The Original String: ", s_1.data)
 
 # Here, we will Append to string
@@ -26,3 +27,4 @@ print("String After Appending: ", s_1.data)
 # Here, we will Remove from string
 s_1.remove(" ")
 print("String after Removing: ", s_1.data)
+
