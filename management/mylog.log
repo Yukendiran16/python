@@ -1,0 +1,152 @@
+2022-12-19 19:34:44,724 - utils.logger_util - INFO - Main method start
+2022-12-19 19:34:48,750 - utils.logger_util - ERROR - name 'add_employee' is not defined
+2022-12-19 19:35:56,546 - utils.logger_util - INFO - Main method start
+2022-12-19 19:36:17,299 - utils.logger_util - ERROR - name 'logger' is not defined
+2022-12-19 19:40:00,880 - utils.logger_util - INFO - Main method start
+2022-12-19 19:40:22,039 - utils.logger_util - ERROR - name 'logger' is not defined
+2022-12-19 19:44:55,422 - utils.logger_util - INFO - Main method start
+2022-12-19 19:45:11,386 - utils.logger_util - ERROR - name 'logger' is not defined
+2022-12-19 19:45:17,854 - management.utils.logger_util - ERROR - Couldn't find employee by id I2I0
+2022-12-19 19:49:51,656 - utils.logger_util - INFO - Main method start
+2022-12-19 19:50:08,719 - management.utils.logger_util - INFO - Employee object initialized
+2022-12-19 19:50:08,719 - utils.logger_util - ERROR - 'Employee' object has no attribute 'create_employee'
+2022-12-19 19:51:15,466 - utils.logger_util - INFO - Main method start
+2022-12-19 19:51:35,430 - management.utils.logger_util - INFO - Employee object initialized
+2022-12-19 19:51:35,431 - management.utils.logger_util - INFO - Inside PF calculation
+2022-12-19 19:51:35,432 - management.utils.logger_util - INFO - Inside Insurance calculation
+2022-12-19 19:51:35,432 - management.utils.logger_util - INFO - salary calculated successfully
+2022-12-19 19:51:35,432 - management.utils.logger_util - INFO - New employee object created id = I2I0
+2022-12-19 19:51:48,485 - utils.logger_util - ERROR - 'Employee' object has no attribute 'is_active'
+2022-12-19 20:16:09,621 - utils.logger_util - INFO - Main method start
+2022-12-19 20:17:16,015 - management.utils.logger_util - INFO - Employee object initialized
+2022-12-19 20:17:16,015 - management.utils.logger_util - INFO - Inside PF calculation
+2022-12-19 20:17:16,015 - management.utils.logger_util - INFO - Inside Insurance calculation
+2022-12-19 20:17:16,016 - management.utils.logger_util - INFO - salary calculated successfully
+2022-12-19 20:17:16,016 - management.utils.logger_util - INFO - New employee object created id = I2I0
+2022-12-19 20:17:24,773 - utils.logger_util - ERROR - 'Employee' object has no attribute 'is_active'
+2022-12-19 20:18:49,227 - utils.logger_util - INFO - Main method start
+2022-12-19 20:19:10,737 - management.utils.logger_util - INFO - Employee object initialized
+2022-12-19 20:19:10,738 - management.utils.logger_util - INFO - Inside PF calculation
+2022-12-19 20:19:10,739 - management.utils.logger_util - INFO - Inside Insurance calculation
+2022-12-19 20:19:10,739 - management.utils.logger_util - INFO - salary calculated successfully
+2022-12-19 20:19:10,739 - management.utils.logger_util - INFO - New employee object created id = I2I0
+2022-12-19 20:19:18,700 - management.utils.logger_util - ERROR - Couldn't find employee by id I2I0
+2022-12-19 20:19:18,700 - utils.logger_util - ERROR - exception handled Couldn't find employee by id I2I0
+2022-12-19 20:21:58,321 - utils.logger_util - INFO - Main method start
+2022-12-19 20:22:20,653 - management.utils.logger_util - INFO - Employee object initialized
+2022-12-19 20:22:20,654 - management.utils.logger_util - INFO - Inside PF calculation
+2022-12-19 20:22:20,654 - management.utils.logger_util - INFO - Inside Insurance calculation
+2022-12-19 20:22:20,654 - management.utils.logger_util - INFO - salary calculated successfully
+2022-12-19 20:22:20,655 - management.utils.logger_util - INFO - New employee object created id = I2I0
+2022-12-19 20:22:47,000 - utils.logger_util - ERROR - 'Employee' object has no attribute 'name'
+2022-12-19 20:25:12,270 - utils.logger_util - INFO - Main method start
+2022-12-19 20:25:32,248 - management.utils.logger_util - INFO - Employee object initialized
+2022-12-19 20:25:32,249 - management.utils.logger_util - INFO - Inside PF calculation
+2022-12-19 20:25:32,249 - management.utils.logger_util - INFO - Inside Insurance calculation
+2022-12-19 20:25:32,249 - management.utils.logger_util - INFO - salary calculated successfully
+2022-12-19 20:25:32,250 - management.utils.logger_util - INFO - New employee object created id = I2I0
+2022-12-19 20:25:42,441 - management.utils.logger_util - ERROR - Couldn't find employee by id I2I0
+2022-12-19 20:25:42,441 - utils.logger_util - ERROR - exception handled Couldn't find employee by id I2I0
+2022-12-19 20:28:35,247 - utils.logger_util - INFO - Main method start
+2022-12-19 20:28:51,430 - management.utils.logger_util - INFO - Employee object initialized
+2022-12-19 20:28:51,431 - management.utils.logger_util - INFO - Inside PF calculation
+2022-12-19 20:28:51,431 - management.utils.logger_util - INFO - Inside Insurance calculation
+2022-12-19 20:28:51,431 - management.utils.logger_util - INFO - salary calculated successfully
+2022-12-19 20:28:51,431 - management.utils.logger_util - INFO - New employee object created id = I2I0
+2022-12-19 20:28:59,348 - management.utils.logger_util - ERROR - Couldn't find employee by id I2I0
+2022-12-19 20:28:59,348 - utils.logger_util - ERROR - exception handled Couldn't find employee by id I2I0
+2022-12-19 20:29:17,394 - management.utils.logger_util - ERROR - Couldn't find employee by name at line 232
+2022-12-19 22:00:37,230 - utils.logger_util - INFO - Main method start
+2022-12-19 22:00:56,938 - management.utils.logger_util - INFO - Employee object initialized
+2022-12-19 22:00:56,939 - management.utils.logger_util - INFO - Inside PF calculation
+2022-12-19 22:00:56,939 - management.utils.logger_util - INFO - Inside Insurance calculation
+2022-12-19 22:00:56,939 - management.utils.logger_util - INFO - salary calculated successfully
+2022-12-19 22:00:56,939 - management.utils.logger_util - INFO - New employee object created id = I2I0
+2022-12-19 22:01:04,597 - management.utils.logger_util - ERROR - Couldn't find employee by id I2I0
+2022-12-19 22:01:04,597 - utils.logger_util - ERROR - exception handled Couldn't find employee by id I2I0
+2022-12-19 22:02:22,489 - utils.logger_util - INFO - Main method start
+2022-12-19 22:02:44,945 - management.utils.logger_util - INFO - Employee object initialized
+2022-12-19 22:02:44,946 - management.utils.logger_util - INFO - Inside PF calculation
+2022-12-19 22:02:44,946 - management.utils.logger_util - INFO - Inside Insurance calculation
+2022-12-19 22:02:44,946 - management.utils.logger_util - INFO - salary calculated successfully
+2022-12-19 22:02:44,946 - management.utils.logger_util - INFO - New employee object created id = I2I0
+2022-12-19 22:02:52,288 - management.utils.logger_util - ERROR - Couldn't find employee by id I2I0
+2022-12-19 22:02:52,288 - utils.logger_util - ERROR - exception handled Couldn't find employee by id I2I0
+2022-12-19 22:15:21,650 - utils.logger_util - INFO - Main method start
+2022-12-19 22:15:41,723 - management.utils.logger_util - INFO - Employee object initialized
+2022-12-19 22:15:41,724 - management.utils.logger_util - INFO - Inside PF calculation
+2022-12-19 22:15:41,724 - management.utils.logger_util - INFO - Inside Insurance calculation
+2022-12-19 22:15:41,724 - management.utils.logger_util - INFO - salary calculated successfully
+2022-12-19 22:15:41,724 - management.utils.logger_util - INFO - New employee object created id = I2I0
+2022-12-19 22:15:49,510 - management.utils.logger_util - ERROR - Couldn't find employee by id I2I0
+2022-12-19 22:15:49,510 - utils.logger_util - ERROR - exception handled Couldn't find employee by id I2I0
+2022-12-19 22:17:49,239 - utils.logger_util - INFO - Main method start
+2022-12-19 22:18:07,792 - management.utils.logger_util - INFO - Employee object initialized
+2022-12-19 22:18:07,793 - management.utils.logger_util - INFO - Inside PF calculation
+2022-12-19 22:18:07,793 - management.utils.logger_util - INFO - Inside Insurance calculation
+2022-12-19 22:18:07,793 - management.utils.logger_util - INFO - salary calculated successfully
+2022-12-19 22:18:07,793 - management.utils.logger_util - INFO - New employee object created id = I2I0
+2022-12-19 22:18:14,438 - utils.logger_util - ERROR - 'Employee' object has no attribute '__employee_id'
+2022-12-19 22:27:47,457 - utils.logger_util - INFO - Main method start
+2022-12-19 22:28:12,494 - management.utils.logger_util - INFO - Employee object initialized
+2022-12-19 22:28:12,495 - management.utils.logger_util - INFO - Inside PF calculation
+2022-12-19 22:28:12,495 - management.utils.logger_util - INFO - Inside Insurance calculation
+2022-12-19 22:28:12,495 - management.utils.logger_util - INFO - salary calculated successfully
+2022-12-19 22:28:12,495 - management.utils.logger_util - INFO - New employee object created id = I2I0
+2022-12-19 22:28:16,740 - utils.logger_util - ERROR - 'Employee' object has no attribute 'is_active'
+2022-12-19 22:28:30,054 - management.utils.logger_util - ERROR - Couldn't find employee by id I2I0
+2022-12-19 22:31:07,484 - utils.logger_util - INFO - Main method start
+2022-12-19 22:31:29,218 - management.utils.logger_util - INFO - Employee object initialized
+2022-12-19 22:31:29,219 - management.utils.logger_util - INFO - Inside PF calculation
+2022-12-19 22:31:29,219 - management.utils.logger_util - INFO - Inside Insurance calculation
+2022-12-19 22:31:29,219 - management.utils.logger_util - INFO - salary calculated successfully
+2022-12-19 22:31:29,220 - management.utils.logger_util - INFO - New employee object created id = I2I0
+2022-12-19 22:31:36,915 - management.utils.logger_util - ERROR - Couldn't find employee by id I2I0
+2022-12-19 22:31:36,915 - utils.logger_util - ERROR - exception handled Couldn't find employee by id I2I0
+2022-12-19 22:37:16,393 - utils.logger_util - INFO - Main method start
+2022-12-19 22:37:20,133 - utils.logger_util - ERROR - invalid literal for int() with base 10: ''
+2022-12-19 22:37:44,243 - management.utils.logger_util - INFO - Employee object initialized
+2022-12-19 22:37:44,244 - management.utils.logger_util - INFO - Inside PF calculation
+2022-12-19 22:37:44,245 - management.utils.logger_util - INFO - Inside Insurance calculation
+2022-12-19 22:37:44,245 - management.utils.logger_util - INFO - salary calculated successfully
+2022-12-19 22:37:44,245 - management.utils.logger_util - INFO - New employee object created id = I2I0
+2022-12-19 22:37:52,408 - management.utils.logger_util - ERROR - Couldn't find employee by id I2I0
+2022-12-19 22:37:52,408 - utils.logger_util - ERROR - exception handled Couldn't find employee by id I2I0
+2022-12-19 22:40:56,337 - utils.logger_util - INFO - Main method start
+2022-12-19 22:41:15,924 - management.utils.logger_util - INFO - Employee object initialized
+2022-12-19 22:41:15,924 - management.utils.logger_util - INFO - Inside PF calculation
+2022-12-19 22:41:15,924 - management.utils.logger_util - INFO - Inside Insurance calculation
+2022-12-19 22:41:15,925 - management.utils.logger_util - INFO - salary calculated successfully
+2022-12-19 22:41:15,925 - management.utils.logger_util - INFO - New employee object created id = I2I0
+2022-12-19 22:41:45,966 - management.utils.logger_util - INFO - Employee object initialized
+2022-12-19 22:41:45,966 - management.utils.logger_util - INFO - New employee id generated
+2022-12-19 22:41:45,966 - management.utils.logger_util - INFO - Inside PF calculation
+2022-12-19 22:41:45,966 - management.utils.logger_util - INFO - Inside Insurance calculation
+2022-12-19 22:41:45,966 - management.utils.logger_util - INFO - salary calculated successfully
+2022-12-19 22:41:45,966 - management.utils.logger_util - INFO - New employee object created id = I2I1
+2022-12-19 22:54:39,721 - utils.logger_util - INFO - Main method start
+2022-12-19 22:54:57,943 - management.utils.logger_util - INFO - Employee object initialized
+2022-12-19 22:54:57,944 - management.utils.logger_util - INFO - Inside PF calculation
+2022-12-19 22:54:57,944 - management.utils.logger_util - INFO - Inside Insurance calculation
+2022-12-19 22:54:57,944 - management.utils.logger_util - INFO - salary calculated successfully
+2022-12-19 22:54:57,945 - management.utils.logger_util - INFO - New employee object created id = I2I0
+2022-12-19 22:55:45,922 - utils.logger_util - ERROR - 'str' object is not callable
+2022-12-19 22:58:06,480 - utils.logger_util - INFO - Main method start
+2022-12-19 22:58:26,581 - management.utils.logger_util - INFO - Employee object initialized
+2022-12-19 22:58:26,583 - management.utils.logger_util - INFO - Inside PF calculation
+2022-12-19 22:58:26,583 - management.utils.logger_util - INFO - Inside Insurance calculation
+2022-12-19 22:58:26,584 - management.utils.logger_util - INFO - salary calculated successfully
+2022-12-19 22:58:26,584 - management.utils.logger_util - INFO - New employee object created id = I2I0
+2022-12-19 22:59:23,882 - utils.logger_util - ERROR - 'str' object is not callable
+2022-12-19 23:00:25,230 - utils.logger_util - INFO - Main method start
+2022-12-19 23:01:41,982 - management.utils.logger_util - INFO - Employee object initialized
+2022-12-19 23:01:41,983 - management.utils.logger_util - INFO - Inside PF calculation
+2022-12-19 23:01:41,983 - management.utils.logger_util - INFO - Inside Insurance calculation
+2022-12-19 23:01:41,983 - management.utils.logger_util - INFO - salary calculated successfully
+2022-12-19 23:01:41,984 - management.utils.logger_util - INFO - New employee object created id = I2I0
+2022-12-20 18:52:31,560 - utils.logger_util - INFO - Main method start
+2022-12-20 18:53:16,388 - management.utils.logger_util - INFO - Employee object initialized
+2022-12-20 18:53:16,388 - management.utils.logger_util - INFO - Inside PF calculation
+2022-12-20 18:53:16,388 - management.utils.logger_util - INFO - Inside Insurance calculation
+2022-12-20 18:53:16,388 - management.utils.logger_util - INFO - salary calculated successfully
+2022-12-20 18:53:16,388 - management.utils.logger_util - INFO - New employee object created id = I2I0
