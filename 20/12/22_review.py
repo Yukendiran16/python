@@ -1,6 +1,6 @@
 list_a = ['abcd', 'efgh', 'ijkl']
 for i in list_a:
-    if 'ijkl' is i:
+    if 'ijkl' == i:
         print(i)
 
 
@@ -15,6 +15,7 @@ sample_map = list(filter(lambda x: x, list_a))
 
 a = b = []
 b = [1, 2, 3]
+
 import time
 
 c = [1, [3, [5, 4, 5, [7, 7]]]]
@@ -23,6 +24,7 @@ print(c)
 c = [[2, 4, 6, 8, 10], [3, 6, 9, 12, 15], [4, 8, 12, 16, 20]]
 c[1][2] = 19
 print(c)
+
 from datetime import date
 
 
@@ -95,14 +97,13 @@ def sample_func(n):
         raise IncorrectTypeException("You entered wrong input please enter numbers")
     else:
         for i in range(n):
-            print(i*i*i*i*i)
+            print(i * i * i * i * i)
 
 
 try:
     sample_func(100)
 except IncorrectTypeException as e:
     print(e)
-
 
 from collections import OrderedDict
 
@@ -116,3 +117,39 @@ sample_ordered_dict = OrderedDict([('name', 'yuki')])
 print(type(sample_ordered_dict))
 
 print(sample_ordered_dict)
+import threading
+import time
+from threading import Thread
+from threading import Lock
+
+lock = Lock()
+my_list = [10, 20]
+
+
+def add(a, b):
+    lock.acquire()
+    print(a + b)
+    print(threading.current_thread())
+    time.sleep(2)
+    lock.release()
+
+
+def my_thread():
+    thread_1 = Thread(target=add, args=(4, 5))
+    thread_2 = Thread(target=add, args=(5, 8))
+    thread_1.start()
+    thread_2.start()
+    thread_1.join()
+    thread_2.join()
+
+
+print(my_list)
+del [my_list]
+# print(my_list)
+
+if __name__ == '__main__':
+    my_thread()
+
+with open('F:/py/log.txt', 'r') as my_log:
+    lines = my_log.readlines()
+    print(lines, end="")

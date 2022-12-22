@@ -5,7 +5,6 @@ import logging
 
 def daemon():
     logging.debug('Starting')
-    time.sleep(2)
     logging.debug('Exiting')
 
 
